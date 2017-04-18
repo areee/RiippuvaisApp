@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="fi.uta.riippuvaisapp">
+    package="fi.uta.riippuvaisapp"
+    android:versionCode="0"
+    android:versionName="0.1">
 
     <application
         android:allowBackup="true"
@@ -18,6 +20,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".FactActivity">
         </activity>
     </application>
 
