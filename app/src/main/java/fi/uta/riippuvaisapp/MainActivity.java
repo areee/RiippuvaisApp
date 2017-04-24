@@ -3,6 +3,7 @@ package fi.uta.riippuvaisapp;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -106,9 +107,15 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_facts) {
             System.out.println("Faktaa valittu");
+            Intent intent = new Intent(getApplicationContext(), FactActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_exercises) {
             System.out.println("Tehtävät valittu");
+            Intent intent = new Intent(getApplicationContext(), ExerciseActivity.class);
+            startActivity(intent);
+
+
         } else if (id == R.id.nav_settings) {
             System.out.println("Asetukset valittu");
         }
