@@ -14,15 +14,26 @@ public class Exercise1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise1);
 
-        Button read = (Button) findViewById(R.id.read_exercise1_button);
-
-        read.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("http://www.stoori.fi/hilmamaria/kasipuhelin-keskittyminen-kadoksissa/"));
-                startActivity(intent);
-            }
-        });
+//        Button read = (Button) findViewById(R.id.read_exercise1_button);
+//
+//        read.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(Intent.ACTION_VIEW);
+//                intent.setData(Uri.parse("http://www.stoori.fi/hilmamaria/kasipuhelin-keskittyminen-kadoksissa/"));
+//                startActivity(intent);
+//            }
+//        });
     }
+
+    public void startReadPage(View v) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("http://www.stoori.fi/hilmamaria/kasipuhelin-keskittyminen-kadoksissa/"));
+        startActivity(intent);
+    }
+
+    public void checkAnswers(View v) {
+
+    }
+
 }

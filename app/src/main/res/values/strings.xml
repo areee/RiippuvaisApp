@@ -19,4 +19,6 @@
     <string name="title_activity_first_start">FirstStartActivity</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="first_start_text1">Tervetuloa käyttämään xx:ää! Tämä sovellus auttaa sinua löytämään sopivan tavoitteen puhelimen käytön tiheyteen ja pääsemään sitä kohti.  Voit käyttää sovellusta pelkkään käytön seurantaan tai suorittaa ohjelman joka sisältää aiheeseen liittyviä tehtäviä sekä kolme eri osiota. Osiot ovat kokeilujakso, tavoitteen asettaminen sekä tavoitteeseen tähtäävä käyttö.</string>
+    <string name="exercise1_title2">1.1 Puhelimen käyttö</string>
+    <string name="read_exercise1_button">Lue</string>
 </resources>
