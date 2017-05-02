@@ -3,7 +3,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:rsb="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +19,7 @@
         <TextView
             android:id="@+id/exercise1_text"
             android:layout_width="wrap_content"
-            android:layout_height="86dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/exercise1_help_text"
             android:textAlignment="center"
@@ -137,13 +138,22 @@
             android:paddingTop="@dimen/activity_vertical_margin"
             android:text="a. Ihmisen tulisi rakentaa minuuttaan koettujen kokemusten päälle, joissa myös sosiaalisen median tapahtumat voivat olla yksi merkityksellinen elementti" />
 
-        <SeekBar
+        <!--<SeekBar-->
+            <!--android:id="@+id/seekBar_exercise1_1"-->
+            <!--style="@style/Widget.AppCompat.SeekBar.Discrete"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:max="5"-->
+            <!--android:progress="0"/>-->
+
+        <org.florescu.android.rangeseekbar.RangeSeekBar
             android:id="@+id/seekBar_exercise1_1"
-            style="@style/Widget.AppCompat.SeekBar.Discrete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:max="5"
-            android:progress="0" />
+            rsb:absoluteMaxValue="5"
+            rsb:absoluteMinValue="0"
+            rsb:singleThumb="true"
+            rsb:textAboveThumbsColor="@android:color/black"/>
 
         <TextView
             android:id="@+id/exercise1_title6"
@@ -196,7 +206,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:onClick="checkAnswers"
-            android:text="Tarkista vastaukset" />
+            android:text="Tarkista" />
 
     </LinearLayout>
 </ScrollView>
