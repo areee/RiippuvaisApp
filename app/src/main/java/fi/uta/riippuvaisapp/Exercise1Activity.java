@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
@@ -112,18 +111,6 @@ public class Exercise1Activity extends AppCompatActivity {
             public void onStopTrackingTouch(SeekBar seekBar) {
             }
         });
-
-
-//        Button read = (Button) findViewById(R.id.read_exercise1_button);
-//
-//        read.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(Intent.ACTION_VIEW);
-//                intent.setData(Uri.parse("http://www.stoori.fi/hilmamaria/kasipuhelin-keskittyminen-kadoksissa/"));
-//                startActivity(intent);
-//            }
-//        });
     }
 
     public void startReadPage(View v) {
@@ -192,21 +179,6 @@ public class Exercise1Activity extends AppCompatActivity {
             });
             builder.show();
         }
-
-//        if (radioButton2.isSelected() && radioButton6.isSelected()) {
-//            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//            builder.setTitle("Vastaukset oikein");
-//            builder.setMessage("Molemmat vastaukset olivat oikein! Hyvä!");
-//            builder.setPositiveButton("Jatka", new DialogInterface.OnClickListener() {
-//                @Override
-//                public void onClick(DialogInterface dialog, int which) {
-//                    finish();
-//                }
-//            });
-//            builder.show();
-//        } else {
-//            System.out.println("Vastauksessa virheitä...");
-//        }
     }
 
 
