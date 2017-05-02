@@ -122,7 +122,7 @@ public class Exercise1Activity extends AppCompatActivity {
     public void checkAnswers(View v) {
 
         final int checkedRadioButtonId1 = radioGroup1.getCheckedRadioButtonId();
-        int checkedRadioButtonId2 = radioGroup2.getCheckedRadioButtonId();
+        final int checkedRadioButtonId2 = radioGroup2.getCheckedRadioButtonId();
 
 
         int id1 = radioButton1.getId();
@@ -174,7 +174,6 @@ public class Exercise1Activity extends AppCompatActivity {
             builder.setPositiveButton("Korjaa", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-
                 }
             });
             builder.show();
