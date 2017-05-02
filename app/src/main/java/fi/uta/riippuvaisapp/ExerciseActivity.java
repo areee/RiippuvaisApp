@@ -15,11 +15,20 @@ public class ExerciseActivity extends AppCompatActivity {
 
 //        Intent activityThatCalled = getIntent();
         Button exercise1 = (Button) findViewById(R.id.exercise_button1);
+        Button exercise2 = (Button) findViewById(R.id.exercise_button2);
 
         exercise1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Exercise1Activity.class);
+                startActivity(intent);
+            }
+        });
+
+        exercise2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Exercise2Activity.class);
                 startActivity(intent);
             }
         });
