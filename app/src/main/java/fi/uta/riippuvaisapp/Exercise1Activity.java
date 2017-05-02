@@ -2,6 +2,7 @@ package fi.uta.riippuvaisapp;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -133,7 +134,7 @@ public class Exercise1Activity extends AppCompatActivity {
 
     public void checkAnswers(View v) {
 
-        int checkedRadioButtonId1 = radioGroup1.getCheckedRadioButtonId();
+        final int checkedRadioButtonId1 = radioGroup1.getCheckedRadioButtonId();
         int checkedRadioButtonId2 = radioGroup2.getCheckedRadioButtonId();
 
 
@@ -157,6 +158,29 @@ public class Exercise1Activity extends AppCompatActivity {
             });
             builder.show();
         } else {
+            if (checkedRadioButtonId1 == id1) {
+                radioButton1.setTextColor(Color.RED);
+            } else {
+                radioButton1.setTextColor(Color.BLACK);
+            }
+
+            if (checkedRadioButtonId1 == id3) {
+                radioButton3.setTextColor(Color.RED);
+            } else {
+                radioButton3.setTextColor(Color.BLACK);
+            }
+
+            if (checkedRadioButtonId2 == id4) {
+                radioButton4.setTextColor(Color.RED);
+            } else {
+                radioButton4.setTextColor(Color.BLACK);
+            }
+            if (checkedRadioButtonId2 == id5) {
+                radioButton5.setTextColor(Color.RED);
+            } else {
+                radioButton5.setTextColor(Color.BLACK);
+            }
+
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Vastauksessa korjattavaa");
             builder.setMessage("Korjaa väärät vastaukset ja tarkista uudelleen.");

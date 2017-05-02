@@ -13,7 +13,7 @@ public class ExerciseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise);
 
-        Intent activityThatCalled = getIntent();
+//        Intent activityThatCalled = getIntent();
         Button exercise1 = (Button) findViewById(R.id.exercise_button1);
 
         exercise1.setOnClickListener(new View.OnClickListener() {
