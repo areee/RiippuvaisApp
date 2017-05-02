@@ -54,7 +54,8 @@
         <RadioGroup
             android:id="@+id/exercise1_radioGroup1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:checkedButton="@+id/exercise1_radioButton1">
 
             <RadioButton
                 android:id="@+id/exercise1_radioButton1"
@@ -94,7 +95,8 @@
         <RadioGroup
             android:id="@+id/exercise1_radioGroup2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:checkedButton="@+id/exercise1_radioButton4">
 
             <RadioButton
                 android:id="@+id/exercise1_radioButton4"
@@ -138,22 +140,30 @@
             android:paddingTop="@dimen/activity_vertical_margin"
             android:text="a. Ihmisen tulisi rakentaa minuuttaan koettujen kokemusten päälle, joissa myös sosiaalisen median tapahtumat voivat olla yksi merkityksellinen elementti" />
 
-        <!--<SeekBar-->
-            <!--android:id="@+id/seekBar_exercise1_1"-->
-            <!--style="@style/Widget.AppCompat.SeekBar.Discrete"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:max="5"-->
-            <!--android:progress="0"/>-->
-
-        <org.florescu.android.rangeseekbar.RangeSeekBar
-            android:id="@+id/seekBar_exercise1_1"
+        <TextView
+            android:id="@+id/seekBar_text_exercise1_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            rsb:absoluteMaxValue="5"
-            rsb:absoluteMinValue="0"
-            rsb:singleThumb="true"
-            rsb:textAboveThumbsColor="@android:color/black"/>
+            android:text="0"
+            android:textAlignment="center"/>
+
+        <SeekBar
+            android:id="@+id/seekBar_exercise1_1"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="5"
+
+            android:progress="0" />
+
+        <!--<org.florescu.android.rangeseekbar.RangeSeekBar-->
+            <!--android:id="@+id/seekBar_exercise1_1"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--rsb:absoluteMaxValue="5"-->
+            <!--rsb:absoluteMinValue="0"-->
+            <!--rsb:singleThumb="true"-->
+            <!--rsb:textAboveThumbsColor="@android:color/black"/>-->
 
         <TextView
             android:id="@+id/exercise1_title6"
@@ -161,6 +171,13 @@
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/activity_vertical_margin"
             android:text="b. Ihmisen tulisi rakentaa minuuttaan todellisten kokemusten päälle, joiden kokemista puhelimen käyttö vain rajoittaa" />
+
+        <TextView
+            android:id="@+id/seekBar_text_exercise1_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textAlignment="center"/>
 
         <SeekBar
             android:id="@+id/seekBar_exercise1_2"
@@ -177,6 +194,13 @@
             android:paddingTop="@dimen/activity_vertical_margin"
             android:text="c. Sosiaalisen median kautta saatava vaikutelma henkilöstä on nykyään yhtä merkityksellinen kuin henkilön vaatetuksen ja muun ulkoasun antama vaikutelma." />
 
+        <TextView
+            android:id="@+id/seekBar_text_exercise1_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textAlignment="center"/>
+
         <SeekBar
             android:id="@+id/seekBar_exercise1_3"
             style="@style/Widget.AppCompat.SeekBar.Discrete"
@@ -191,6 +215,13 @@
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/activity_vertical_margin"
             android:text="d. Ystävien kanssa vietetty aika saa lisäarvoa jos siitä jää muiston lisäksi kuvamateriaalia." />
+
+        <TextView
+            android:id="@+id/seekBar_text_exercise1_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textAlignment="center"/>
 
         <SeekBar
             android:id="@+id/seekBar_exercise1_4"
