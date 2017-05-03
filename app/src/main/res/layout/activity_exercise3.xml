@@ -139,7 +139,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/activity_vertical_margin"
-            android:text="a. Pystyn suoriutumaan älyllisesti vaativista tehtävistä yhtä hyvin vaikka vastaisin muutamaan tekstiviestin tunnissa" />
+            android:text="a. Pystyn suoriutumaan älyllisesti vaativista tehtävistä yhtä hyvin vaikka vastaisin muutamaan tekstiviestiin tunnissa" />
 
         <TextView
             android:id="@+id/seekBar_text_exercise3_1"

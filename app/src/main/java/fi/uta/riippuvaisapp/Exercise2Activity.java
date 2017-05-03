@@ -228,8 +228,8 @@ public class Exercise2Activity extends AppCompatActivity {
 
 
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("Vastauksessa korjattavaa");
-            builder.setMessage("Korjaa väärät vastaukset ja tarkista uudelleen.");
+            builder.setTitle("Vastauksissa korjattavaa");
+            builder.setMessage("Korjaa punaisella värillä merkityt väärät vastaukset ja tarkista uudelleen.");
             builder.setPositiveButton("Korjaa", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
