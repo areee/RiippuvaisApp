@@ -24,6 +24,8 @@ public class SetGoalActivity extends AppCompatActivity {
     int view;
     String[] list2;
     int view2;
+    int values;
+    int[] valueList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,9 @@ public class SetGoalActivity extends AppCompatActivity {
         title1.setText(list1[view]);
         view2 = 0;
         weekday.setText(list2[view2]);
+
+        values = 70;
+        valueList = new int[values];
 
         showHelpDialog("Aloita");
     }
@@ -100,6 +105,7 @@ public class SetGoalActivity extends AppCompatActivity {
 
     public void ready(View v) {
         System.out.println("Valmis!");
+        finish();
     }
 
     private void showHelpDialog(String s) {
