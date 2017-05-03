@@ -13,9 +13,9 @@ public class ExerciseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise);
 
-//        Intent activityThatCalled = getIntent();
         Button exercise1 = (Button) findViewById(R.id.exercise_button1);
         Button exercise2 = (Button) findViewById(R.id.exercise_button2);
+        Button exercise3 = (Button) findViewById(R.id.exercise_button3);
 
         exercise1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,6 +29,14 @@ public class ExerciseActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Exercise2Activity.class);
+                startActivity(intent);
+            }
+        });
+
+        exercise3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Exercise3Activity.class);
                 startActivity(intent);
             }
         });

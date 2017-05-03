@@ -25,4 +25,6 @@
     <string name="exercise3_text">Tehtävä 3</string>
     <string name="exercise4_text">Tehtävä 4</string>
     <string name="exercise2_help_text">Katso tutkija Matt Killingsworthin pitämä puhe ja vastaa tehtäviin 2.1-2.5.</string>
+    <string name="watch_button">Katso</string>
+    <string name="exercise3_help_text">Lue Whitson Gordonin teksti liittyen lyhyisiin keskeytyksiin ja vastaa tehtäviin 3.1-3.3.</string>
 </resources>

@@ -34,6 +34,9 @@
             android:name=".Exercise2Activity"
             android:label="@string/exercise2_text" />
         <activity
+            android:name=".Exercise3Activity"
+            android:label="@string/exercise3_text" />
+        <activity
             android:name=".FirstStartActivity"
             android:label="@string/title_activity_first_start"
             android:theme="@style/AppTheme.NoActionBar"/>

@@ -16,65 +16,65 @@
         tools:context=".Exercise1Activity">
 
         <TextView
-            android:id="@+id/exercise2_text"
+            android:id="@+id/exercise3_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/exercise2_help_text"
+            android:text="@string/exercise3_help_text"
             android:textAlignment="center"
             android:textAppearance="@android:style/TextAppearance.Material.Subhead" />
 
         <Button
-            android:id="@+id/watch_exercise2_button"
+            android:id="@+id/read_exercise3_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:onClick="startWatchingVideo"
-            android:text="@string/watch_button" />
+            android:onClick="startReading"
+            android:text="@string/read_button" />
 
         <TextView
-            android:id="@+id/exercise2_title1"
+            android:id="@+id/exercise3_title1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Valitse oikea vaihtoehto tutkimuksen mukaan:"
+            android:text="Valitse oikea vaihtoehto:"
             android:textAlignment="center"
             android:textAppearance="@android:style/TextAppearance.Material.Headline" />
 
         <TextView
-            android:id="@+id/exercise2_title2"
+            android:id="@+id/exercise3_title2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:paddingTop="@dimen/activity_vertical_margin"
-            android:text="2.1 Ihmiset tuntevat olonsa onnellisimmaksi"
+            android:text="3.1 Siinä mainitun tutkimustuloksen valossa"
             android:textAlignment="center"
             android:textAppearance="@android:style/TextAppearance.Material.Title" />
 
 
         <RadioGroup
-            android:id="@+id/exercise2_radioGroup1"
+            android:id="@+id/exercise3_radioGroup1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:checkedButton="@+id/exercise2_radioButton1">
+            android:checkedButton="@+id/exercise3_radioButton1">
 
             <RadioButton
-                android:id="@+id/exercise2_radioButton1"
+                android:id="@+id/exercise3_radioButton1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Kun he haaveilevat usein" />
+                android:text="Vain kolmen sekunnin mittaiset keskeytykset eivät vaikuttaneet työtuloksiin" />
 
             <RadioButton
-                android:id="@+id/exercise2_radioButton2"
+                android:id="@+id/exercise3_radioButton2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Kun he keskittyvät siihen mitä ovat tekemässä" />
+                android:text="Kolme sekuntia kestäneet keskeytykset lisäsivät työssä tapahtuvien virheiden määrää" />
 
             <RadioButton
-                android:id="@+id/exercise2_radioButton3"
+                android:id="@+id/exercise3_radioButton3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Kun he haaveilevat työnteon lomassa" />
+                android:text="Kolme sekuntia kestäneet keskeytykset kolminkertaistivat koehenkilöiden tekemien virheiden määrän" />
         </RadioGroup>
 
         <View
@@ -84,38 +84,38 @@
             android:background="#888888" />
 
         <TextView
-            android:id="@+id/exercise2_title3"
+            android:id="@+id/exercise3_title3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:paddingTop="@dimen/activity_vertical_margin"
-            android:text="2.2 Kun ihmisten mieli ei vaeltele, he tuntevat olonsa"
+            android:text="3.2 Kirjoittajan näkemyksen mukaan tutkimuksesta saatu tulos"
             android:textAlignment="center"
             android:textAppearance="@android:style/TextAppearance.Material.Title" />
 
         <RadioGroup
-            android:id="@+id/exercise2_radioGroup2"
+            android:id="@+id/exercise3_radioGroup2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:checkedButton="@+id/exercise2_radioButton4">
+            android:checkedButton="@+id/exercise3_radioButton4">
 
             <RadioButton
-                android:id="@+id/exercise2_radioButton4"
+                android:id="@+id/exercise3_radioButton4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Lähes yhtä onnellisiksi kuin heidän haaveillessaan myönteisiä asioita" />
+                android:text="On aivan uutta tietoa" />
 
             <RadioButton
-                android:id="@+id/exercise2_radioButton5"
+                android:id="@+id/exercise3_radioButton5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Selvästi onnettomammaksi kuin haaveillessaan myönteisiä asioita" />
+                android:text="Osoittaa että puhelin on hyvä jättää äänettömälle jos haluaa keskittyä työntekoon" />
 
             <RadioButton
-                android:id="@+id/exercise2_radioButton6"
+                android:id="@+id/exercise3_radioButton6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Onnettomammaksi kuin haaveillessaan neutraaleista asioista" />
+                android:text="Osoittaa kuinka tärkeä on tehdä häiriötön työpiste" />
         </RadioGroup>
 
         <View
@@ -125,113 +125,31 @@
             android:background="#888888" />
 
         <TextView
-            android:id="@+id/exercise2_title4"
+            android:id="@+id/exercise3_title4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:paddingTop="@dimen/activity_vertical_margin"
-            android:text="2.3 Mielen vaeltelu"
-            android:textAlignment="center"
-            android:textAppearance="@android:style/TextAppearance.Material.Title" />
-
-        <RadioGroup
-            android:id="@+id/exercise2_radioGroup3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:checkedButton="@+id/exercise2_radioButton7">
-
-            <RadioButton
-                android:id="@+id/exercise2_radioButton7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Seuraa usein onnettomuuden kokemisesta" />
-
-            <RadioButton
-                android:id="@+id/exercise2_radioButton8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Johtaa onnellisuuden tunteen vähenemiseen sen jälkeen" />
-
-            <RadioButton
-                android:id="@+id/exercise2_radioButton9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Vähenee kun ihminen keskittyy usein puhelimeensa" />
-        </RadioGroup>
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="0.5dp"
-            android:layout_marginTop="@dimen/activity_horizontal_margin"
-            android:background="#888888" />
-
-        <TextView
-            android:id="@+id/exercise2_title5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:text="2.4 Kuinka suuren osan ajastaan ihmiset käyttävät ajatellen muuta kuin mitä he ovat tekemässä?"
-            android:textAlignment="center"
-            android:textAppearance="@android:style/TextAppearance.Material.Title" />
-
-        <RadioGroup
-            android:id="@+id/exercise2_radioGroup4"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:checkedButton="@+id/exercise2_radioButton10">
-
-            <RadioButton
-                android:id="@+id/exercise2_radioButton10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="70%" />
-
-            <RadioButton
-                android:id="@+id/exercise2_radioButton11"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="33%" />
-
-            <RadioButton
-                android:id="@+id/exercise2_radioButton12"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="47%" />
-        </RadioGroup>
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="0.5dp"
-            android:layout_marginTop="@dimen/activity_horizontal_margin"
-            android:background="#888888" />
-
-        <TextView
-            android:id="@+id/exercise2_title6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:text="2.5 Mieti seuraavia väittämiä ja merkitse missä määrin samaistut niihin (0=täysin eri mieltä, 5=täysin samaa mieltä). Mikäli mahdollista, pohdi väittämiä kaverin kanssa!"
+            android:text="3.3 Mieti seuraavia väittämiä ja merkitse missä määrin samaistut niihin (0=täysin eri mieltä, 5=täysin samaa mieltä) Mikäli mahdollista, pohdi väittämiä kaverin kanssa!"
             android:textAlignment="center"
             android:textAppearance="@android:style/TextAppearance.Material.Title" />
 
         <TextView
-            android:id="@+id/exercise2_title7"
+            android:id="@+id/exercise3_title5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/activity_vertical_margin"
-            android:text="a. Pystyn uppoutumaan harrastuksiini yhtä hyvin vaikka kirjoittaisin muutaman tekstiviestin tuntia kohden" />
+            android:text="a. Pystyn suoriutumaan älyllisesti vaativista tehtävistä yhtä hyvin vaikka vastaisin muutamaan tekstiviestin tunnissa" />
 
         <TextView
-            android:id="@+id/seekBar_text_exercise2_1"
+            android:id="@+id/seekBar_text_exercise3_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="0"
             android:textAlignment="center"/>
 
         <SeekBar
-            android:id="@+id/seekBar_exercise2_1"
+            android:id="@+id/seekBar_exercise3_1"
             style="@style/Widget.AppCompat.SeekBar.Discrete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -240,21 +158,21 @@
             android:progress="0" />
 
         <TextView
-            android:id="@+id/exercise2_title8"
+            android:id="@+id/exercise3_title6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/activity_vertical_margin"
-            android:text="b. Koen, että tarkastan puhelimeni saapuneiden viestien/ilmoitusten varalta liian harvoin" />
+            android:text="b. Vastaan usein kiireettömiinkin viesteihin mahdollisimman pian" />
 
         <TextView
-            android:id="@+id/seekBar_text_exercise2_2"
+            android:id="@+id/seekBar_text_exercise3_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="0"
             android:textAlignment="center"/>
 
         <SeekBar
-            android:id="@+id/seekBar_exercise2_2"
+            android:id="@+id/seekBar_exercise3_2"
             style="@style/Widget.AppCompat.SeekBar.Discrete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -263,21 +181,21 @@
             android:progress="0" />
 
         <TextView
-            android:id="@+id/exercise2_title9"
+            android:id="@+id/exercise3_title7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/activity_vertical_margin"
-            android:text="c. Koen, että puhelimen käyttö saa mieleni liian usein harhailemaan pois käsilläolevasta hetkestä" />
+            android:text="c. Arvostan enemmän kasvokkain käytyä keskustelua kuin puhelimen välillä käytyä keskustelua tuttavien kanssa" />
 
         <TextView
-            android:id="@+id/seekBar_text_exercise2_3"
+            android:id="@+id/seekBar_text_exercise3_3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="0"
             android:textAlignment="center"/>
 
         <SeekBar
-            android:id="@+id/seekBar_exercise2_3"
+            android:id="@+id/seekBar_exercise3_3"
             style="@style/Widget.AppCompat.SeekBar.Discrete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -286,21 +204,21 @@
             android:progress="0" />
 
         <TextView
-            android:id="@+id/exercise2_title10"
+            android:id="@+id/exercise3_title8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/activity_vertical_margin"
-            android:text="d. Puhelimen käytön määrää ei vaikuta siihen kuinka keskityn muihin asioihin" />
+            android:text="d. Elämäntilanteeni on sellainen, että voisin sulkea puhelimen internet-yhteyden joiksikin tunneiksi päivän aikana" />
 
         <TextView
-            android:id="@+id/seekBar_text_exercise2_4"
+            android:id="@+id/seekBar_text_exercise3_4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="0"
             android:textAlignment="center"/>
 
         <SeekBar
-            android:id="@+id/seekBar_exercise2_4"
+            android:id="@+id/seekBar_exercise3_4"
             style="@style/Widget.AppCompat.SeekBar.Discrete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -308,7 +226,7 @@
             android:progress="0" />
 
         <Button
-            android:id="@+id/exercise2_ready_button"
+            android:id="@+id/exercise3_ready_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

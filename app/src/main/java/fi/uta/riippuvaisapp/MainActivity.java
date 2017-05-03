@@ -1,5 +1,6 @@
 package fi.uta.riippuvaisapp;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -82,6 +83,11 @@ public class MainActivity extends AppCompatActivity
                     .setTitle(R.string.app_name)
                     .setMessage(R.string.about_app_message)
                     .setIcon(R.drawable.information)
+                    .setPositiveButton("Sulje", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    })
                     .show();
             return true;
         }
