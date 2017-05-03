@@ -102,10 +102,12 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         Fragment fragment = null;
 
-        if (id == R.id.nav_home) {
-            System.out.println("Kotiin valittu");
+//        if (id == R.id.nav_home) {
+//            System.out.println("Kotiin valittu");
+//
+//        } else
 
-        } else if (id == R.id.nav_facts) {
+            if (id == R.id.nav_facts) {
             System.out.println("Faktaa valittu");
             Intent intent = new Intent(getApplicationContext(), FactActivity.class);
             startActivity(intent);
@@ -118,16 +120,32 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_settings) {
             System.out.println("Asetukset valittu");
+            Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+            startActivity(intent);
         }
-
-//        else if (id == R.id.nav_share) {
-//
-//        } else if (id == R.id.nav_send) {
-//
-//        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void exercisesClicked(View v) {
+        Intent intent = new Intent(getApplicationContext(), ExerciseActivity.class);
+        startActivity(intent);
+    }
+
+    public void setGoalClicked(View v) {
+        Intent intent = new Intent(getApplicationContext(), SetGoalActivity.class);
+        startActivity(intent);
+    }
+
+    public void factsCliked(View view) {
+        Intent intent = new Intent(getApplicationContext(), FactActivity.class);
+        startActivity(intent);
+    }
+
+    public void settingsClicked(View v) {
+        Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+        startActivity(intent);
     }
 }

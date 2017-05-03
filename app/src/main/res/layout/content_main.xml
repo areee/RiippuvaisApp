@@ -64,6 +64,7 @@
         android:layout_width="368dp"
         android:layout_height="wrap_content"
         android:text="Faktaa"
+        android:onClick="factsCliked"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/exercises_button"
@@ -75,6 +76,7 @@
         android:layout_width="368dp"
         android:layout_height="wrap_content"
         android:text="Asetukset"
+        android:onClick="settingsClicked"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -86,10 +88,22 @@
         android:layout_width="368dp"
         android:layout_height="wrap_content"
         android:text="Tehtäviä"
+        android:onClick="exercisesClicked"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/week_average"
         app:layout_constraintVertical_bias="0.462" />
+
+    <Button
+        android:id="@+id/set_goal_button"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:text="Aseta tavoite"
+        android:onClick="setGoalClicked"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settings_button" />
 
 </android.support.constraint.ConstraintLayout>
