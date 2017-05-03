@@ -29,4 +29,7 @@
     <string name="exercise3_help_text">Lue Whitson Gordonin teksti liittyen lyhyisiin keskeytyksiin ja vastaa tehtäviin 3.1-3.3.</string>
     <string name="title_activity_setting_goal">Aseta tavoite</string>
     <string name="settings_title">Asetukset</string>
+    <string name="set_goal_help_dialog_text">Nyt tavoitteena on löytää <b>sinulle</b> sopiva tavoite puhelimen avauskertoihin.\nAloita tekemällä arvio siitä, kuinka paljon tarvitset puhelinta eri vuorokaudenaikoina.\n\nMieti päiväsi kulkua. Kuinka monta kertaa tarvitset puhelinta seuraavina ajankohtina?</string>
+    <string name="previous_button">Edellinen</string>
+    <string name="next_button">Seuraava</string>
 </resources>
