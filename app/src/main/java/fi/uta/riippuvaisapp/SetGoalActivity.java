@@ -142,19 +142,22 @@ public class SetGoalActivity extends AppCompatActivity {
     public void previous(View v) {
         // "0") If a user has set new values to the goal text fields and presses the previous button,
         // the app still saves the values:
-        
-        // Get the values of the goal text fields:
+
+        // 0.1) Get the values of the goal text fields:
         String s1 = goal1.getText().toString();
         String s2 = goal2.getText().toString();
         String s3 = goal3.getText().toString();
         String s4 = goal4.getText().toString();
         String s5 = goal5.getText().toString();
 
-        valueList[helpValue] = s1; // helpValue is for example 5
-        valueList[helpValue + 1] = s2;
-        valueList[helpValue + 2] = s3;
-        valueList[helpValue + 3] = s4;
-        valueList[helpValue + 4] = s5;
+        // 0.2) If some value(s) of the goal text fields is not empty, save these values to valueList:
+        if (!s1.isEmpty() || !s2.isEmpty() || !s3.isEmpty() || !s4.isEmpty() || !s5.isEmpty()) {
+            valueList[helpValue] = s1; // helpValue is for example 5
+            valueList[helpValue + 1] = s2;
+            valueList[helpValue + 2] = s3;
+            valueList[helpValue + 3] = s4;
+            valueList[helpValue + 4] = s5;
+        }
 
         // 1) Shrink helpValue, get values from valueList and set that value to the goal text fields
         helpValue--; // for example 5 -> 4
@@ -171,7 +174,7 @@ public class SetGoalActivity extends AppCompatActivity {
         // 2) The set of goals is different (=a new time), so shrink it with 1:
         timeNumber--;
 
-        // If
+        // 3) If timeNumber is smaller than the last index of the timelist:
         if (timeNumber < timeList.length - 1) {
             nextButton.setEnabled(true);
             readyButton.setVisibility(View.INVISIBLE);
