@@ -36,6 +36,9 @@ public class SetGoalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_goal);
 
+        timeList = new String[]{"Klo 06-09", "Klo 09-12", "Klo 12-15", "Klo 15-18", "Klo 18-21", "Klo 21-00", "Klo 00-06"};
+        dayList = new String[]{"Arkipäivät ma-pe", "Viikonloppu la-su"};
+
         dayTitle = (TextView) findViewById(R.id.set_goal_weekday);
         dayNumber = 0;
         dayTitle.setText(dayList[dayNumber]);
@@ -58,9 +61,6 @@ public class SetGoalActivity extends AppCompatActivity {
         readyButton = (Button) findViewById(R.id.ready_button);
         readyButton.setVisibility(View.INVISIBLE);
 
-        timeList = new String[]{"Klo 06-09", "Klo 09-12", "Klo 12-15", "Klo 15-18", "Klo 18-21", "Klo 21-00", "Klo 00-06"};
-        dayList = new String[]{"Arkipäivät ma-pe", "Viikonloppu la-su"};
-
         // 7 times in timeList * 5 goals to set * 2 day categories = 70 values
         values = 70;
         valueList = new String[values];
@@ -75,20 +75,103 @@ public class SetGoalActivity extends AppCompatActivity {
         showHelpDialog("Sulje");
     }
 
+    // When the next button is clicked, do several things:
+    public void next(View v) {
+        // 1.1) Collect values from goal text fields...:
+        String s1 = goal1.getText().toString();
+        String s2 = goal2.getText().toString();
+        String s3 = goal3.getText().toString();
+        String s4 = goal4.getText().toString();
+        String s5 = goal5.getText().toString();
+
+        // 1.2) ...and save them to valueList:
+        valueList[helpValue] = s1; // in the beginning helpValue is 0
+        helpValue++; // grow helpValue
+        valueList[helpValue] = s2; // helpValue is 1
+        helpValue++;
+        valueList[helpValue] = s3; // helpValue is 2
+        helpValue++;
+        valueList[helpValue] = s4; // helpValue is 3
+        helpValue++;
+        valueList[helpValue] = s5; // helpValue is 4
+        helpValue++; // next time helpValue is 5 etc.
+
+        // When the values of goal text fields are in safe, the fields are cleared:
+        goal1.setText(valueList[helpValue]);
+        goal2.setText(valueList[helpValue + 1]);
+        goal3.setText(valueList[helpValue + 2]);
+        goal4.setText(valueList[helpValue + 3]);
+        goal5.setText(valueList[helpValue + 4]);
+
+        // 2) The set of goals is different (=a new time), so grow it with 1:
+        timeNumber++;
+
+        // 3) If timeNumber is not the 0th, a user can click previousButton:
+        if (timeNumber > 0) {
+            previousButton.setEnabled(true);
+        }
+
+        // 4) If timeNumber has grown over the last index of timeList and dayNumber is still 0:
+        if (goingToAnotherSet()) {
+            dayNumber++; // grow dayNumber
+            dayTitle.setText(dayList[dayNumber]); // set a new title for dayTitle
+            timeNumber = 0; // reset the value of timeNumber
+        }
+
+        // 5) If timeNumber equals the last index of timeList and dayNumber is 1,
+        // the view should be the last:
+        if (isLastView()) {
+            nextButton.setEnabled(false); // nextButton can't be selected anymore (the last view)
+            readyButton.setVisibility(View.VISIBLE); // readyButton is shown
+        }
+        // 6) Set the timeTitle according to the timeNumber index in timeList:
+        // For example: the another set of goals -> timeNumber = 2, timeList[2] = "Klo 09-12"
+        timeTitle.setText(timeList[timeNumber]);
+        goal1.setSelected(true);
+    }
+
+    private boolean goingToAnotherSet() {
+        return timeNumber == timeList.length && dayNumber == 0;
+    }
+
+    private boolean isLastView() {
+        return timeNumber == timeList.length - 1 && dayNumber == 1;
+    }
+
+    // When the previous button is clicked, do several things:
     public void previous(View v) {
-        helpValue--; // edellinen 5 -> 4
+        // "0") If a user has set new values to the goal text fields and presses the previous button,
+        // the app still saves the values:
+        
+        // Get the values of the goal text fields:
+        String s1 = goal1.getText().toString();
+        String s2 = goal2.getText().toString();
+        String s3 = goal3.getText().toString();
+        String s4 = goal4.getText().toString();
+        String s5 = goal5.getText().toString();
+
+        valueList[helpValue] = s1; // helpValue is for example 5
+        valueList[helpValue + 1] = s2;
+        valueList[helpValue + 2] = s3;
+        valueList[helpValue + 3] = s4;
+        valueList[helpValue + 4] = s5;
+
+        // 1) Shrink helpValue, get values from valueList and set that value to the goal text fields
+        helpValue--; // for example 5 -> 4
         goal5.setText(valueList[helpValue]);
-        helpValue--;
+        helpValue--; // for example 4 -> 3
         goal4.setText(valueList[helpValue]);
-        helpValue--;
+        helpValue--; // for example 3 -> 2
         goal3.setText(valueList[helpValue]);
-        helpValue--;
+        helpValue--; // for example 2 -> 1
         goal2.setText(valueList[helpValue]);
-        helpValue--;
+        helpValue--; // for example 1 -> 0
         goal1.setText(valueList[helpValue]);
 
+        // 2) The set of goals is different (=a new time), so shrink it with 1:
         timeNumber--;
 
+        // If
         if (timeNumber < timeList.length - 1) {
             nextButton.setEnabled(true);
             readyButton.setVisibility(View.INVISIBLE);
@@ -107,60 +190,12 @@ public class SetGoalActivity extends AppCompatActivity {
         timeTitle.setText(timeList[timeNumber]);
     }
 
-    public void next(View v) {
-        // When the next button is clicked, do several things:
-
-        // 1) save values in goal text fields:
-        String s1 = goal1.getText().toString();
-        String s2 = goal2.getText().toString();
-        String s3 = goal3.getText().toString();
-        String s4 = goal4.getText().toString();
-        String s5 = goal5.getText().toString();
-
-
-        // helpValue on aivan alussa 0
-        valueList[helpValue] = s1;
-        helpValue++;
-        valueList[helpValue] = s2;
-        helpValue++;
-        valueList[helpValue] = s3;
-        helpValue++;
-        valueList[helpValue] = s4;
-        helpValue++;
-        valueList[helpValue] = s5;
-        helpValue++;
-
-        goal1.setText("0");
-        goal2.setText("0");
-        goal3.setText("0");
-        goal4.setText("0");
-        goal5.setText("0");
-
-
-        timeNumber++;
-        if (timeNumber > 0) {
-            previousButton.setEnabled(true);
-        }
-
-        if (timeNumber == timeList.length && dayNumber == 0) {
-            dayNumber++;
-            dayTitle.setText(dayList[dayNumber]);
-            timeNumber = 0;
-        }
-
-        if (timeNumber == timeList.length - 1 && dayNumber == 1) {
-            nextButton.setEnabled(false);
-            readyButton.setVisibility(View.VISIBLE);
-        }
-
-        timeTitle.setText(timeList[timeNumber]);
-    }
-
+    // When setting a goal is ready, readyButton can be clicked:
     public void ready(View v) {
-        System.out.println("Valmis!");
         finish();
     }
 
+    // A method for showing a help dialog:
     private void showHelpDialog(String s) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Arvioi puhelimen käytön tarpeesi");
