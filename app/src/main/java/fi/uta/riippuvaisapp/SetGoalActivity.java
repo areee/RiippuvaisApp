@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,7 +26,8 @@ public class SetGoalActivity extends AppCompatActivity {
     String[] list2;
     int view2;
     int values;
-    int[] valueList;
+    String[] valueList;
+    int help;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +55,8 @@ public class SetGoalActivity extends AppCompatActivity {
         weekday.setText(list2[view2]);
 
         values = 70;
-        valueList = new int[values];
+        valueList = new String[values];
+        help = 0;
 
         showHelpDialog("Aloita");
     }
@@ -63,6 +66,17 @@ public class SetGoalActivity extends AppCompatActivity {
     }
 
     public void previous(View v) {
+        help--; // edellinen 5 -> 4
+        text5.setText(valueList[help]);
+        help--;
+        text4.setText(valueList[help]);
+        help--;
+        text3.setText(valueList[help]);
+        help--;
+        text2.setText(valueList[help]);
+        help--;
+        text1.setText(valueList[help]);
+
         view--;
 
         if (view < list1.length - 1) {
@@ -84,6 +98,30 @@ public class SetGoalActivity extends AppCompatActivity {
     }
 
     public void next(View v) {
+        String s1 = text1.getText().toString();
+        String s2 = text2.getText().toString();
+        String s3 = text3.getText().toString();
+        String s4 = text4.getText().toString();
+        String s5 = text5.getText().toString();
+
+        // help on aivan alussa 0
+        valueList[help] = s1;
+        help++;
+        valueList[help] = s2;
+        help++;
+        valueList[help] = s3;
+        help++;
+        valueList[help] = s4;
+        help++;
+        valueList[help] = s5;
+        help++;
+
+        text1.setText("0");
+        text2.setText("0");
+        text3.setText("0");
+        text4.setText("0");
+        text5.setText("0");
+
         view++;
         if (view > 0) {
             previous.setEnabled(true);
