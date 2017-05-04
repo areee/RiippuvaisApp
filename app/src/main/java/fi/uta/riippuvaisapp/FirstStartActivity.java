@@ -47,7 +47,7 @@ public class FirstStartActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 // When the given dropdown item is selected, show its contents in the
-                // container view.
+                // container timeNumber.
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
                         .commit();
@@ -132,7 +132,7 @@ public class FirstStartActivity extends AppCompatActivity {
 
 
     /**
-     * A placeholder fragment containing a simple view.
+     * A placeholder fragment containing a simple timeNumber.
      */
     public static class PlaceholderFragment extends Fragment {
         /**

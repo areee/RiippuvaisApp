@@ -4,27 +4,28 @@ import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 public class SetGoalActivity extends AppCompatActivity {
-    TextView weekday;
-    TextView title1;
-    EditText text1;
-    EditText text2;
-    EditText text3;
-    EditText text4;
-    EditText text5;
-    Button previous;
-    Button next;
-    Button ready;
-    String[] list1;
-    int view;
-    String[] list2;
-    int view2;
+    TextView dayTitle;
+    TextView timeTitle;
+    EditText goal1;
+    EditText goal2;
+    EditText goal3;
+    EditText goal4;
+    EditText goal5;
+    Button previousButton;
+    Button nextButton;
+    Button readyButton;
+
+    String[] timeList;
+    String[] dayList;
+
+    int timeNumber;
+    int dayNumber;
     int values;
     String[] valueList;
     int help;
@@ -34,25 +35,30 @@ public class SetGoalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_goal);
 
-        weekday = (TextView) findViewById(R.id.set_goal_weekday);
-        title1 = (TextView) findViewById(R.id.set_goal_title1);
-        text1 = (EditText) findViewById(R.id.set_goal1);
-        text2 = (EditText) findViewById(R.id.set_goal2);
-        text3 = (EditText) findViewById(R.id.set_goal3);
-        text4 = (EditText) findViewById(R.id.set_goal4);
-        text5 = (EditText) findViewById(R.id.set_goal5);
-        previous = (Button) findViewById(R.id.previous_button);
-        next = (Button) findViewById(R.id.next_button);
-        ready = (Button) findViewById(R.id.ready_button);
+        dayTitle = (TextView) findViewById(R.id.set_goal_weekday);
+        timeTitle = (TextView) findViewById(R.id.set_goal_title1);
+        goal1 = (EditText) findViewById(R.id.set_goal1);
+        goal2 = (EditText) findViewById(R.id.set_goal2);
+        goal3 = (EditText) findViewById(R.id.set_goal3);
+        goal4 = (EditText) findViewById(R.id.set_goal4);
+        goal5 = (EditText) findViewById(R.id.set_goal5);
+        previousButton = (Button) findViewById(R.id.previous_button);
+        nextButton = (Button) findViewById(R.id.next_button);
+        readyButton = (Button) findViewById(R.id.ready_button);
 
-        list1 = new String[]{"Klo 06-09", "Klo 09-12", "Klo 12-15", "Klo 15-18", "Klo 18-21", "Klo 21-00", "Klo 00-06"};
-        list2 = new String[]{"Arkipäivät ma-pe", "Viikonloppu la-su"};
-        view = 0;
-        previous.setEnabled(false);
-        ready.setVisibility(View.INVISIBLE);
-        title1.setText(list1[view]);
-        view2 = 0;
-        weekday.setText(list2[view2]);
+        timeList = new String[]{"Klo 06-09", "Klo 09-12", "Klo 12-15", "Klo 15-18", "Klo 18-21", "Klo 21-00", "Klo 00-06"};
+        dayList = new String[]{"Arkipäivät ma-pe", "Viikonloppu la-su"};
+
+        timeNumber = 0;
+        dayNumber = 0;
+
+        previousButton.setEnabled(false);
+
+        readyButton.setVisibility(View.INVISIBLE);
+        timeTitle.setText(timeList[timeNumber]);
+
+
+        dayTitle.setText(dayList[dayNumber]);
 
         values = 70;
         valueList = new String[values];
@@ -61,48 +67,48 @@ public class SetGoalActivity extends AppCompatActivity {
         showHelpDialog("Aloita");
     }
 
-    public void showHelp(View view) {
+    public void showHelp(View v) {
         showHelpDialog("Sulje");
     }
 
     public void previous(View v) {
         help--; // edellinen 5 -> 4
-        text5.setText(valueList[help]);
+        goal5.setText(valueList[help]);
         help--;
-        text4.setText(valueList[help]);
+        goal4.setText(valueList[help]);
         help--;
-        text3.setText(valueList[help]);
+        goal3.setText(valueList[help]);
         help--;
-        text2.setText(valueList[help]);
+        goal2.setText(valueList[help]);
         help--;
-        text1.setText(valueList[help]);
+        goal1.setText(valueList[help]);
 
-        view--;
+        timeNumber--;
 
-        if (view < list1.length - 1) {
-            next.setEnabled(true);
-            ready.setVisibility(View.INVISIBLE);
+        if (timeNumber < timeList.length - 1) {
+            nextButton.setEnabled(true);
+            readyButton.setVisibility(View.INVISIBLE);
         }
 
-        if (view < 0 && view2 == 1) {
-            view2--;
-            weekday.setText(list2[view2]);
-            view = list1.length - 1;
+        if (timeNumber < 0 && dayNumber == 1) {
+            dayNumber--;
+            dayTitle.setText(dayList[dayNumber]);
+            timeNumber = timeList.length - 1;
         }
 
-        if (view == 0 && view2 == 0) {
-            previous.setEnabled(false);
+        if (timeNumber == 0 && dayNumber == 0) {
+            previousButton.setEnabled(false);
         }
 
-        title1.setText(list1[view]);
+        timeTitle.setText(timeList[timeNumber]);
     }
 
     public void next(View v) {
-        String s1 = text1.getText().toString();
-        String s2 = text2.getText().toString();
-        String s3 = text3.getText().toString();
-        String s4 = text4.getText().toString();
-        String s5 = text5.getText().toString();
+        String s1 = goal1.getText().toString();
+        String s2 = goal2.getText().toString();
+        String s3 = goal3.getText().toString();
+        String s4 = goal4.getText().toString();
+        String s5 = goal5.getText().toString();
 
         // help on aivan alussa 0
         valueList[help] = s1;
@@ -116,29 +122,29 @@ public class SetGoalActivity extends AppCompatActivity {
         valueList[help] = s5;
         help++;
 
-        text1.setText("0");
-        text2.setText("0");
-        text3.setText("0");
-        text4.setText("0");
-        text5.setText("0");
+        goal1.setText("0");
+        goal2.setText("0");
+        goal3.setText("0");
+        goal4.setText("0");
+        goal5.setText("0");
 
-        view++;
-        if (view > 0) {
-            previous.setEnabled(true);
+        timeNumber++;
+        if (timeNumber > 0) {
+            previousButton.setEnabled(true);
         }
 
-        if (view == list1.length && view2 == 0) {
-            view2++;
-            weekday.setText(list2[view2]);
-            view = 0;
+        if (timeNumber == timeList.length && dayNumber == 0) {
+            dayNumber++;
+            dayTitle.setText(dayList[dayNumber]);
+            timeNumber = 0;
         }
 
-        if (view == list1.length - 1 && view2 == 1) {
-            next.setEnabled(false);
-            ready.setVisibility(View.VISIBLE);
+        if (timeNumber == timeList.length - 1 && dayNumber == 1) {
+            nextButton.setEnabled(false);
+            readyButton.setVisibility(View.VISIBLE);
         }
 
-        title1.setText(list1[view]);
+        timeTitle.setText(timeList[timeNumber]);
     }
 
     public void ready(View v) {
