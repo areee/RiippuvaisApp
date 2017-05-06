@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
+    <!--checkableBehavior="single"-->
+    <group android:checkableBehavior="none">
         <!--<item-->
-            <!--android:id="@+id/nav_home"-->
-            <!--android:icon="@drawable/home"-->
-            <!--android:title="Alkuun" />-->
+        <!--android:id="@+id/nav_home"-->
+        <!--android:icon="@drawable/home"-->
+        <!--android:title="Alkuun" />-->
         <item
             android:id="@+id/nav_facts"
             android:icon="@drawable/pencil"
@@ -20,17 +21,23 @@
             android:title="Asetukset" />
     </group>
 
-    <!--<item android:title="Communicate">-->
-        <!--<menu>-->
+    <!--<item-->
+    <!--android:id="@+id/nav_read_data"-->
+    <!--android:title="Tallennetut tiedot" />-->
+
+    <item android:title="Tallennetut tiedot">
+        <menu>
             <!--<item-->
-                <!--android:id="@+id/nav_share"-->
-                <!--android:icon="@drawable/ic_menu_share"-->
-                <!--android:title="Share" />-->
-            <!--<item-->
-                <!--android:id="@+id/nav_send"-->
-                <!--android:icon="@drawable/ic_menu_send"-->
-                <!--android:title="Send" />-->
-        <!--</menu>-->
-    <!--</item>-->
+            <!--android:id="@+id/nav_set_goal"-->
+            <!--android:title="Aseta tavoite" />-->
+            <!--android:icon="@drawable/ic_menu_share"-->
+
+            <item
+                android:id="@+id/nav_read_data"
+                android:title="Lue tallennettua dataa" />
+            <!--android:icon="@drawable/ic_menu_send"-->
+
+        </menu>
+    </item>
 
 </menu>

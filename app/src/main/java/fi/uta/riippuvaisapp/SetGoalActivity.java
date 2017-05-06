@@ -1,5 +1,6 @@
 package fi.uta.riippuvaisapp;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 
 public class SetGoalActivity extends AppCompatActivity {
     TextView dayTitle;
@@ -30,6 +34,8 @@ public class SetGoalActivity extends AppCompatActivity {
     int values;
     String[] valueList;
     int helpValue;
+
+    String FILENAME;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +72,8 @@ public class SetGoalActivity extends AppCompatActivity {
         valueList = new String[values];
 
         helpValue = 0;
+
+        FILENAME = "set_goal";
 
         showHelpDialog("Aloita");
     }
@@ -197,8 +205,31 @@ public class SetGoalActivity extends AppCompatActivity {
         timeTitle.setText(timeList[timeNumber]);
     }
 
-    // When setting a goal is ready, readyButton can be clicked:
+    // When setting a goal is ready, readyButton can be clicked.
+    // This means also saving the results in valueList to the internal storage using FileOutputStream:
     public void ready(View v) {
+        String s = "";
+
+        // This for-loop goes through the valueList
+        // and saves each value to a string "s" in a single line:
+        for (int i = 0; i < valueList.length; i++) {
+            String s1 = valueList[i];
+            s = s.concat(s1 + "\n"); // + "\n"
+        }
+
+        System.out.println(s);
+
+        // Saves/writes the content in string "s" to the FILENAME ("set_goal") using FileOutputStream:
+        try {
+            FileOutputStream outputStream = openFileOutput(FILENAME, Context.MODE_PRIVATE);
+            outputStream.write(s.getBytes());
+            outputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Tallennettu tiedostoon!");
+
         finish();
     }
 

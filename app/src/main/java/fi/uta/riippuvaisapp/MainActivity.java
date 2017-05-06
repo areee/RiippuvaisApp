@@ -107,20 +107,22 @@ public class MainActivity extends AppCompatActivity
 //
 //        } else
 
-            if (id == R.id.nav_facts) {
-            System.out.println("Faktaa valittu");
+        if (id == R.id.nav_facts) {
             Intent intent = new Intent(getApplicationContext(), FactActivity.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_exercises) {
-            System.out.println("Tehtävät valittu");
             Intent intent = new Intent(getApplicationContext(), ExerciseActivity.class);
             startActivity(intent);
 
 
         } else if (id == R.id.nav_settings) {
-            System.out.println("Asetukset valittu");
             Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_read_data) {
+            System.out.println("Datan lukeminen valittu.");
+
+            Intent intent = new Intent(getApplicationContext(), ReadDataActivity.class);
             startActivity(intent);
         }
 
