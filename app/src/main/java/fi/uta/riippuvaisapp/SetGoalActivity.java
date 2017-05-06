@@ -153,10 +153,10 @@ public class SetGoalActivity extends AppCompatActivity {
         // 0.2) If some value(s) of the goal text fields is not empty, save these values to valueList:
         if (!s1.isEmpty() || !s2.isEmpty() || !s3.isEmpty() || !s4.isEmpty() || !s5.isEmpty()) {
             valueList[helpValue] = s1; // helpValue is for example 5
-            valueList[helpValue + 1] = s2;
-            valueList[helpValue + 2] = s3;
-            valueList[helpValue + 3] = s4;
-            valueList[helpValue + 4] = s5;
+            valueList[helpValue + 1] = s2;// -"-                   6
+            valueList[helpValue + 2] = s3;// -"-                   7
+            valueList[helpValue + 3] = s4;// -"-                   8
+            valueList[helpValue + 4] = s5;// -"-                   9
         }
 
         // 1) Shrink helpValue, get values from valueList and set that value to the goal text fields
@@ -174,22 +174,26 @@ public class SetGoalActivity extends AppCompatActivity {
         // 2) The set of goals is different (=a new time), so shrink it with 1:
         timeNumber--;
 
-        // 3) If timeNumber is smaller than the last index of the timelist:
+        // 3) If the timeNumber is smaller than the last index of the timelist:
         if (timeNumber < timeList.length - 1) {
-            nextButton.setEnabled(true);
-            readyButton.setVisibility(View.INVISIBLE);
+            nextButton.setEnabled(true); // nextButton is enabled
+            readyButton.setVisibility(View.INVISIBLE); // readyButton is invisible
         }
 
+        // 4) If timenumber has shrunk under zero and dayNumber is 1:
         if (timeNumber < 0 && dayNumber == 1) {
-            dayNumber--;
+            dayNumber--; // shrink dayNumber to 0
+            // set the dayTitle according to the index of the dayNumber in the dayList:
             dayTitle.setText(dayList[dayNumber]);
-            timeNumber = timeList.length - 1;
+            timeNumber = timeList.length - 1; // set the timeNumber to the last index of the timeList
         }
 
+        // 5) If the timeNumber equals 0 and the dayNumber equals also 0, we have returned in a very
+        // first index of the views:
         if (timeNumber == 0 && dayNumber == 0) {
-            previousButton.setEnabled(false);
+            previousButton.setEnabled(false); // the previousButton is disabled
         }
-
+        // 6) The last thing: set the timeTitle according to the index of timeNumber in the timeList:
         timeTitle.setText(timeList[timeNumber]);
     }
 
