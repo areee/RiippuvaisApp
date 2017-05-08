@@ -2,6 +2,7 @@ package fi.uta.riippuvaisapp;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ public class Exercise3Activity extends AppCompatActivity {
     RadioButton radioButton5;
     RadioButton radioButton6;
 
+    public static final String PREFS_NAME = "FileForSharedPreferences";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -141,6 +143,13 @@ public class Exercise3Activity extends AppCompatActivity {
             builder.setPositiveButton("Jatka", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
+
+                    // Saving to SharedPreferences that the exercise is done:
+                    SharedPreferences exerciseStatus = getSharedPreferences(PREFS_NAME, 0);
+                    SharedPreferences.Editor edit = exerciseStatus.edit();
+                    edit.putBoolean("exercise3Done", true);
+                    edit.commit();
+
                     finish();
                 }
             });

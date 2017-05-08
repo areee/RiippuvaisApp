@@ -29,6 +29,29 @@
             android:layout_height="wrap_content"
             android:text="Example" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/read_data_previous_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="previousPressed"
+                android:text="@string/previous_button" />
+
+            <Button
+                android:id="@+id/read_data_next_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="nextPressed"
+                android:text="@string/next_button" />
+
+        </LinearLayout>
+
     </LinearLayout>
 </ScrollView>
 

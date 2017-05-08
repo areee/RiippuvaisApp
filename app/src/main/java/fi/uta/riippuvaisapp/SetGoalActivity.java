@@ -37,7 +37,7 @@ public class SetGoalActivity extends AppCompatActivity {
     String[] valueList;
     int helpValue;
 
-    String FILENAME;
+    String FILENAME = "set_goal";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,8 +74,6 @@ public class SetGoalActivity extends AppCompatActivity {
         valueList = new String[values];
 
         helpValue = 0;
-
-        FILENAME = "set_goal";
 
         showHelpDialog("Aloita");
     }
@@ -250,7 +248,7 @@ public class SetGoalActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        System.out.println("Tallennettu tiedostoon!");
+        System.out.println("Tallennettu tiedostoon " + FILENAME);
 
         Toast toast = Toast.makeText(getApplicationContext(), "Tavoite tallennettu!", Toast.LENGTH_SHORT);
         toast.show();
