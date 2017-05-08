@@ -6,9 +6,11 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -85,24 +87,8 @@ public class SetGoalActivity extends AppCompatActivity {
 
     // When the next button is clicked, do several things:
     public void next(View v) {
-        // 1.1) Collect values from goal text fields...:
-        String s1 = goal1.getText().toString();
-        String s2 = goal2.getText().toString();
-        String s3 = goal3.getText().toString();
-        String s4 = goal4.getText().toString();
-        String s5 = goal5.getText().toString();
+        readAndSaveGoalValues();
 
-        // 1.2) ...and save them to valueList:
-        valueList[helpValue] = s1; // in the beginning helpValue is 0
-        helpValue++; // grow helpValue
-        valueList[helpValue] = s2; // helpValue is 1
-        helpValue++;
-        valueList[helpValue] = s3; // helpValue is 2
-        helpValue++;
-        valueList[helpValue] = s4; // helpValue is 3
-        helpValue++;
-        valueList[helpValue] = s5; // helpValue is 4
-        helpValue++; // next time helpValue is 5 etc.
 
         // When the values of goal text fields are in safe, the fields are cleared:
         goal1.setText(valueList[helpValue]);
@@ -132,10 +118,42 @@ public class SetGoalActivity extends AppCompatActivity {
             nextButton.setEnabled(false); // nextButton can't be selected anymore (the last view)
             readyButton.setVisibility(View.VISIBLE); // readyButton is shown
         }
+
         // 6) Set the timeTitle according to the timeNumber index in timeList:
         // For example: the another set of goals -> timeNumber = 2, timeList[2] = "Klo 09-12"
         timeTitle.setText(timeList[timeNumber]);
-        goal1.setSelected(true);
+
+        setFocusAndOpenSoftKeyboard();
+    }
+
+    private void setFocusAndOpenSoftKeyboard() {
+        // Set the first text field ("goal1") focused and trigger the soft keyboard:
+        goal1.requestFocus();
+
+        final InputMethodManager inputMethodManager = (InputMethodManager) getApplicationContext()
+                .getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputMethodManager.showSoftInput(goal1, InputMethodManager.SHOW_IMPLICIT);
+    }
+
+    private void readAndSaveGoalValues() {
+        // 1.1) Collect values from goal text fields...:
+        String s1 = goal1.getText().toString();
+        String s2 = goal2.getText().toString();
+        String s3 = goal3.getText().toString();
+        String s4 = goal4.getText().toString();
+        String s5 = goal5.getText().toString();
+
+        // 1.2) ...and save them to valueList:
+        valueList[helpValue] = s1; // in the beginning helpValue is 0
+        helpValue++; // grow helpValue
+        valueList[helpValue] = s2; // helpValue is 1
+        helpValue++;
+        valueList[helpValue] = s3; // helpValue is 2
+        helpValue++;
+        valueList[helpValue] = s4; // helpValue is 3
+        helpValue++;
+        valueList[helpValue] = s5; // helpValue is 4
+        helpValue++; // next time helpValue is 5 etc.
     }
 
     private boolean goingToAnotherSet() {
@@ -203,11 +221,15 @@ public class SetGoalActivity extends AppCompatActivity {
         }
         // 6) The last thing: set the timeTitle according to the index of timeNumber in the timeList:
         timeTitle.setText(timeList[timeNumber]);
+
+        setFocusAndOpenSoftKeyboard();
     }
 
     // When setting a goal is ready, readyButton can be clicked.
     // This means also saving the results in valueList to the internal storage using FileOutputStream:
     public void ready(View v) {
+        readAndSaveGoalValues();
+
         String s = "";
 
         // This for-loop goes through the valueList
@@ -229,6 +251,9 @@ public class SetGoalActivity extends AppCompatActivity {
         }
 
         System.out.println("Tallennettu tiedostoon!");
+
+        Toast toast = Toast.makeText(getApplicationContext(), "Tavoite tallennettu!", Toast.LENGTH_SHORT);
+        toast.show();
 
         finish();
     }

@@ -16,6 +16,14 @@
         tools:context=".ReadDataActivity">
 
         <TextView
+            android:id="@+id/read_data_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tavoitteen asettaminen:"
+
+            android:textAppearance="@android:style/TextAppearance.Material.Headline" />
+
+        <TextView
             android:id="@+id/read_data_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
