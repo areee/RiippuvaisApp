@@ -53,6 +53,10 @@ public class ExerciseActivity extends AppCompatActivity {
                 } else { // exercise 3 is done
                     exercise3.setBackgroundColor(Color.argb(100, 15, 251, 0));
                     exercise4.setEnabled(true);
+
+                    if (!button4) { // exercise 4 is not done
+                        exercise4.setBackgroundColor(Color.argb(100, 251, 23, 0));
+                    }
                 }
             }
         }
