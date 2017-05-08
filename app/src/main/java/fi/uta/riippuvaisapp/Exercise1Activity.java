@@ -140,6 +140,9 @@ public class Exercise1Activity extends AppCompatActivity {
             builder.setPositiveButton("Jatka", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
+                    // TODO: add memory parts here!
+
+
                     finish();
                 }
             });
