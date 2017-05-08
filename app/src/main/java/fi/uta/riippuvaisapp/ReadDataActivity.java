@@ -1,10 +1,12 @@
 package fi.uta.riippuvaisapp;
 
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.FileInputStream;
 
@@ -19,7 +21,6 @@ public class ReadDataActivity extends AppCompatActivity {
     String[] titleList;
     String[] fileList;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,8 +33,8 @@ public class ReadDataActivity extends AppCompatActivity {
 
         countView = 0;
 
-        titleList = new String[]{"Tavoitteen asettaminen:", "Tehtävän 1 liukusäätimet:"};
-        fileList = new String[]{"set_goal", "seekbar_values_exercise1"};
+        titleList = new String[]{"Tavoitteen asettaminen:", "Tehtävän 1 liukusäätimet:", "Tehtävän 2 liukusäätimet:", "Tehtävän 3 liukusäätimet:"};
+        fileList = new String[]{"set_goal", "seekbar_values_exercise1", "seekbar_values_exercise2", "seekbar_values_exercise3"};
 
         title.setText(titleList[countView]);
         previousButton.setEnabled(false);
@@ -74,13 +75,14 @@ public class ReadDataActivity extends AppCompatActivity {
                 fileContent.append((char) ch);
             }
         } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "Tähän ei ole vielä tallennettu arvoja", Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
 
         String data = new String(fileContent);
         System.out.println(data);
         System.out.println("Data luettu!");
-        
+
         title.setText(titleList[countView]);
         textContent.setText(data);
     }

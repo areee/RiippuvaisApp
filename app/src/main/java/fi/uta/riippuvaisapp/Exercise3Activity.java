@@ -1,5 +1,6 @@
 package fi.uta.riippuvaisapp;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,6 +15,8 @@ import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import java.io.FileOutputStream;
+
 public class Exercise3Activity extends AppCompatActivity {
     RadioGroup radioGroup1;
     RadioButton radioButton1;
@@ -24,6 +27,18 @@ public class Exercise3Activity extends AppCompatActivity {
     RadioButton radioButton4;
     RadioButton radioButton5;
     RadioButton radioButton6;
+
+    TextView textView1;
+    TextView textView2;
+    TextView textView3;
+    TextView textView4;
+
+    SeekBar seekBar1;
+    SeekBar seekBar2;
+    SeekBar seekBar3;
+    SeekBar seekBar4;
+
+    String FILENAME = "seekbar_values_exercise3";
 
     public static final String PREFS_NAME = "FileForSharedPreferences";
 
@@ -42,17 +57,17 @@ public class Exercise3Activity extends AppCompatActivity {
         radioButton5 = (RadioButton) findViewById(R.id.exercise3_radioButton5);
         radioButton6 = (RadioButton) findViewById(R.id.exercise3_radioButton6);
 
-        final TextView textView1 = (TextView) findViewById(R.id.seekBar_text_exercise3_1);
-        SeekBar seekBar1 = (SeekBar) findViewById(R.id.seekBar_exercise3_1);
+        textView1 = (TextView) findViewById(R.id.seekBar_text_exercise3_1);
+        seekBar1 = (SeekBar) findViewById(R.id.seekBar_exercise3_1);
 
-        final TextView textView2 = (TextView) findViewById(R.id.seekBar_text_exercise3_2);
-        SeekBar seekBar2 = (SeekBar) findViewById(R.id.seekBar_exercise3_2);
+        textView2 = (TextView) findViewById(R.id.seekBar_text_exercise3_2);
+        seekBar2 = (SeekBar) findViewById(R.id.seekBar_exercise3_2);
 
-        final TextView textView3 = (TextView) findViewById(R.id.seekBar_text_exercise3_3);
-        SeekBar seekBar3 = (SeekBar) findViewById(R.id.seekBar_exercise3_3);
+        textView3 = (TextView) findViewById(R.id.seekBar_text_exercise3_3);
+        seekBar3 = (SeekBar) findViewById(R.id.seekBar_exercise3_3);
 
-        final TextView textView4 = (TextView) findViewById(R.id.seekBar_text_exercise3_4);
-        SeekBar seekBar4 = (SeekBar) findViewById(R.id.seekBar_exercise3_4);
+        textView4 = (TextView) findViewById(R.id.seekBar_text_exercise3_4);
+        seekBar4 = (SeekBar) findViewById(R.id.seekBar_exercise3_4);
 
         seekBar1.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -149,6 +164,24 @@ public class Exercise3Activity extends AppCompatActivity {
                     SharedPreferences.Editor edit = exerciseStatus.edit();
                     edit.putBoolean("exercise3Done", true);
                     edit.commit();
+
+                    String s = "";
+                    s = s.concat(textView1.getText() + "\n");
+                    s = s.concat(textView2.getText() + "\n");
+                    s = s.concat(textView3.getText() + "\n");
+                    s = s.concat(textView4.getText() + "\n");
+
+                    System.out.println(s);
+
+                    try {
+                        FileOutputStream outputStream = openFileOutput(FILENAME, Context.MODE_PRIVATE);
+                        outputStream.write(s.getBytes());
+                        outputStream.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                    System.out.println("Tallennettu tiedostoon " + FILENAME);
 
                     finish();
                 }
