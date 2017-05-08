@@ -51,7 +51,7 @@
             android:label="Lue tallennettua dataa" />
         <activity
             android:name=".RecallActivity"
-            android:label="Palauta mieleen" />
+            android:label="Palauta mieleesi" />
 
 
     </application>

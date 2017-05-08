@@ -74,8 +74,9 @@ public class ReadDataActivity extends AppCompatActivity {
             while ((ch = fis.read()) != -1) {
                 fileContent.append((char) ch);
             }
+            fis.close();
         } catch (Exception e) {
-            Toast.makeText(getApplicationContext(), "Tähän ei ole vielä tallennettu arvoja", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Tähän toimintoon ei ole vielä tallennettu arvoja", Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
 
