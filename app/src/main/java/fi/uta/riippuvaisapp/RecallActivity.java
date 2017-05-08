@@ -47,24 +47,24 @@ public class RecallActivity extends AppCompatActivity {
 
         System.out.println("splitValues1-listan koko: " + splitValues1.length);
 
-//        int value1 = Integer.parseInt(splitValues1[2]);
+        int value1 = Integer.parseInt(splitValues1[2]);
 
-        number1.setText(splitValues1[2]);
-        seekBar1.setProgress(Integer.parseInt(splitValues1[2]));
-//
-//        StringBuffer fileContent2 = readContent(FILENAME2);
-//        String s = new String(fileContent2);
-//        String[] splitValues2 = s.split("\n");
-//
-//        System.out.println("splitValues2-listan koko: " + splitValues2.length);
-//
-//        int value2 = Integer.parseInt(splitValues2[3]);
-//        number2.setText(value2);
-////        seekBar2.setProgress(value2);
-////
-//        int value3 = Integer.parseInt(splitValues2[1]);
-//        number3.setText(value3);
-//        seekBar3.setProgress(value3);
+        number1.setText("" + value1);
+        seekBar1.setProgress(value1);
+
+        StringBuffer fileContent2 = readContent(FILENAME2);
+        String s = new String(fileContent2);
+        String[] splitValues2 = s.split("\n");
+
+        System.out.println("splitValues2-listan koko: " + splitValues2.length);
+
+        int value2 = Integer.parseInt(splitValues2[3]);
+        number2.setText("" + value2);
+        seekBar2.setProgress(value2);
+
+        int value3 = Integer.parseInt(splitValues2[1]);
+        number3.setText("" + value3);
+        seekBar3.setProgress(value3);
 
 
     }
