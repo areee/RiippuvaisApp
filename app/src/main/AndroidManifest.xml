@@ -49,6 +49,11 @@
         <activity
             android:name=".ReadDataActivity"
             android:label="Lue tallennettua dataa" />
+        <activity
+            android:name=".RecallActivity"
+            android:label="Palauta mieleen" />
+
+
     </application>
 
 </manifest>

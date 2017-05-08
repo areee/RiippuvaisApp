@@ -137,7 +137,10 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void setGoalClicked(View v) {
-        Intent intent = new Intent(getApplicationContext(), SetGoalActivity.class);
+//        Intent intent = new Intent(getApplicationContext(), SetGoalActivity.class);
+//        startActivity(intent);
+
+        Intent intent = new Intent(getApplicationContext(), RecallActivity.class);
         startActivity(intent);
     }
 

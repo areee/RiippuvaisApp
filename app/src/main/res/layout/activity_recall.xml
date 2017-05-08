@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context=".RecallActivity">
+
+        <TextView
+            android:id="@+id/recall_title1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tavoitteen asettaminen tapahtuu vaiheittain. Ennen kuin teet käyttömääräarvion, palauta vielä mieleesi joitakin kokeilujakson aikana antamiasi vastauksia:"
+            android:textAlignment="center"
+            android:textAppearance="@android:style/TextAppearance.Material.Subhead" />
+
+        <TextView
+            android:id="@+id/recall_title2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tehtävästä 2.5:"
+            android:textAppearance="@android:style/TextAppearance.Material.Title" />
+
+        <TextView
+            android:id="@+id/recall_seekBar_title1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:text="c. Koen, että puhelimen käyttö saa mieleni liian usein harhailemaan pois käsilläolevasta hetkestä" />
+
+        <TextView
+            android:id="@+id/recall_seekBar_number1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textAlignment="center" />
+
+        <SeekBar
+            android:id="@+id/recall_seekBar1"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="5"
+            android:progress="0" />
+
+        <TextView
+            android:id="@+id/recall_title3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tehtävästä 3.3:"
+            android:textAppearance="@android:style/TextAppearance.Material.Title" />
+
+        <TextView
+            android:id="@+id/recall_seekBar_title2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:text="d. Elämäntilanteeni on sellainen, että voisin sulkea puhelimeni internet-yhteyden joiksikin tunneiksi päivän aikana" />
+
+        <TextView
+            android:id="@+id/recall_seekBar_number2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textAlignment="center" />
+
+        <SeekBar
+            android:id="@+id/recall_seekBar2"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="5"
+            android:progress="0" />
+
+        <TextView
+            android:id="@+id/recall_seekBar_title3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:text="b. Vastaan usein kiireettömiinkin viesteihin mahdollisimman pian." />
+
+        <TextView
+            android:id="@+id/recall_seekBar_number3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textAlignment="center" />
+
+        <SeekBar
+            android:id="@+id/recall_seekBar3"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="5"
+            android:progress="0" />
+
+        <Button
+            android:id="@+id/recall_continue_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="recallContinueButtonClicked"
+            android:text="Jatka" />
+
+    </LinearLayout>
+
+
+</ScrollView>
+
+    <!--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"--><!--xmlns:app="http://schemas.android.com/apk/res-auto"--><!--xmlns:tools="http://schemas.android.com/tools"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--tools:context="fi.uta.riippuvaisapp.RecallActivity">-->
+
+    <!--</android.support.constraint.ConstraintLayout>-->
