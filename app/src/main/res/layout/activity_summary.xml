@@ -212,7 +212,7 @@
             android:id="@+id/summary_title3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Syötä tavoite näytön avaamiskerroille arkisin:"
+            android:text="Syötä tavoite näytön avaamiskerroille arkisin päivää kohden:"
             android:textAppearance="@android:style/TextAppearance.Material.Subhead" />
 
         <EditText
@@ -345,7 +345,7 @@
             android:id="@+id/summary_title5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Syötä tavoite näytön avaamiskerroille viikonloppuisin:"
+            android:text="Syötä tavoite näytön avaamiskerroille viikonloppuisin päivää kohden:"
             android:textAppearance="@android:style/TextAppearance.Material.Subhead" />
 
         <EditText

@@ -21,21 +21,16 @@
             android:title="Asetukset" />
     </group>
 
-    <!--<item-->
-    <!--android:id="@+id/nav_read_data"-->
-    <!--android:title="Tallennetut tiedot" />-->
-
-    <item android:title="Tallennetut tiedot">
+    <item android:title="Työkaluja">
         <menu>
-            <!--<item-->
-            <!--android:id="@+id/nav_set_goal"-->
-            <!--android:title="Aseta tavoite" />-->
-            <!--android:icon="@drawable/ic_menu_share"-->
 
             <item
                 android:id="@+id/nav_read_data"
                 android:title="Lue tallennettua dataa" />
-            <!--android:icon="@drawable/ic_menu_send"-->
+
+            <item
+                android:id="@+id/nav_go_to_summary"
+                android:title="Mene suoraan yhteenvetoon" />
 
         </menu>
     </item>

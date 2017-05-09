@@ -120,9 +120,10 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_read_data) {
-            System.out.println("Datan lukeminen valittu.");
-
             Intent intent = new Intent(getApplicationContext(), ReadDataActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_go_to_summary) {
+            Intent intent = new Intent(getApplicationContext(), SummaryActivity.class);
             startActivity(intent);
         }
 

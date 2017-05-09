@@ -240,7 +240,7 @@ public class SetGoalActivity extends AppCompatActivity {
 
         System.out.println(s);
 
-        // Saves/writes the content in string "s" to the FILENAME ("set_goal") using FileOutputStream:
+        // Saves/writes the content in string "s" to the FILENAME1 ("set_goal") using FileOutputStream:
         try {
             FileOutputStream outputStream = openFileOutput(FILENAME, Context.MODE_PRIVATE);
             outputStream.write(s.getBytes());
@@ -251,7 +251,7 @@ public class SetGoalActivity extends AppCompatActivity {
 
         System.out.println("Tallennettu tiedostoon " + FILENAME);
 
-        Toast toast = Toast.makeText(getApplicationContext(), "Tavoite tallennettu!", Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(getApplicationContext(), "Tavoite tallennettu!", Toast.LENGTH_LONG);
         toast.show();
 
         finish();

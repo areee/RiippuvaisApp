@@ -54,7 +54,8 @@
             android:label="Palauta mieleesi" />
         <activity
             android:name=".SummaryActivity"
-            android:label="Yhteenveto" />
+            android:label="Yhteenveto"
+            android:windowSoftInputMode="stateHidden" />
     </application>
 
 </manifest>

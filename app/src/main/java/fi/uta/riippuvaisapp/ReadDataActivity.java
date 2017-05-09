@@ -33,35 +33,13 @@ public class ReadDataActivity extends AppCompatActivity {
 
         countView = 0;
 
-        titleList = new String[]{"Tavoitteen asettaminen:", "Tehtävän 1 liukusäätimet:", "Tehtävän 2 liukusäätimet:", "Tehtävän 3 liukusäätimet:"};
-        fileList = new String[]{"set_goal", "seekbar_values_exercise1", "seekbar_values_exercise2", "seekbar_values_exercise3"};
+        titleList = new String[]{"Arvio käyttötarpeesta:", "Lopullinen käyttötavoite:", "Tehtävän 1 liukusäätimet:", "Tehtävän 2 liukusäätimet:", "Tehtävän 3 liukusäätimet:"};
+        fileList = new String[]{"set_goal", "summary_values", "seekbar_values_exercise1", "seekbar_values_exercise2", "seekbar_values_exercise3"};
 
         title.setText(titleList[countView]);
         previousButton.setEnabled(false);
 
         readAndViewData();
-
-//        StringBuilder stringBuilder = new StringBuilder();
-
-//        try {
-//            fileInputStream = openFileInput(FILENAME);
-//            fileInputStream.read();
-//
-//            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream, "UTF-8"));
-//            String s = null;
-//            while ((s = bufferedReader.readLine()) != null) {
-//                stringBuilder.append(s).append("\n");
-//            }
-//            fileInputStream.close();
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-
-//        String result = stringBuilder.toString();
-
-//        textContent.setText(result);
-//        System.out.println(result);
     }
 
     private void readAndViewData() {
