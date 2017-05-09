@@ -52,8 +52,9 @@
         <activity
             android:name=".RecallActivity"
             android:label="Palauta mieleesi" />
-
-
+        <activity
+            android:name=".SummaryActivity"
+            android:label="Yhteenveto" />
     </application>
 
 </manifest>

@@ -2,6 +2,7 @@ package fi.uta.riippuvaisapp;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -254,6 +255,9 @@ public class SetGoalActivity extends AppCompatActivity {
         toast.show();
 
         finish();
+
+        Intent intent = new Intent(getApplicationContext(), SummaryActivity.class);
+        startActivity(intent);
     }
 
     // A method for showing a help dialog:
