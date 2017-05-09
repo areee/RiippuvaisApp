@@ -1,186 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/tlTable01"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:background="#161616"
-    android:paddingTop="1dp"
-    android:stretchColumns="0">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <TableRow
-        android:background="#000000"
-        android:paddingBottom="1dp"
-        android:paddingRight="1dp">
-
-        <TextView
-            android:layout_marginStart="1dp"
-            android:background="#cccccc"
-            android:padding="5dp"
-            android:text="Päivä\n" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context=".SummaryActivity">
 
         <TextView
-            android:layout_marginStart="1dp"
-            android:background="#cccccc"
-            android:padding="5dp"
-            android:text="Käyttö kokeilujakson\naikana" />
+            android:id="@+id/summary_title1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vertaile tuloksiasi kokeilujakson ajalta sekä arviotasi käyttötarpeesta. Aseta sen jälkeen tavoitelukemasi."
+            android:textAppearance="@android:style/TextAppearance.Material.Subhead" />
+
+        <view
+            class="android.support.v4.widget.Space"
+            id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fab_margin" />
 
         <TextView
-            android:layout_marginStart="1dp"
-            android:background="#cccccc"
-            android:gravity="end"
-            android:padding="5dp"
-            android:text="Arvio\nkäyttötarpeesta" />
-    </TableRow>
+            android:id="@+id/summary_title2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Arkisin"
+            android:textAppearance="@android:style/TextAppearance.Material.Subhead" />
 
-    <TableRow
-        android:background="#000000"
-        android:paddingBottom="1dp"
-        android:paddingRight="1dp">
+        <view
+            class="android.support.v4.widget.Space"
+            id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fab_margin" />
+
+        <TableLayout
+            android:id="@+id/summary_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:shrinkColumns="*">
+
+            <TableRow
+                android:background="#000000"
+                android:padding="0.5dp">
+
+                <TextView
+                    android:layout_margin="0.5dp"
+                    android:background="#cccccc"
+                    android:gravity="center"
+                    android:text="Päivä " />
+
+                <TextView
+                    android:layout_margin="0.5dp"
+                    android:background="#cccccc"
+                    android:gravity="center"
+                    android:text="Käyttö kokeilujakson aikana" />
+
+                <TextView
+                    android:layout_margin="0.5dp"
+                    android:background="#cccccc"
+                    android:gravity="center"
+                    android:text="Arvio käyttötarpeesta" />
+            </TableRow>
+
+            <TableRow
+                android:background="#000000"
+                android:padding="0.5dp">
+
+                <TextView
+                    android:layout_margin="0.5dp"
+                    android:background="#FFF"
+                    android:padding="5dp"
+                    android:text="Maanantai" />
+
+                <TextView
+                    android:layout_margin="0.5dp"
+                    android:background="#FFF"
+                    android:padding="5dp"
+                    android:text="160 = 10/vt" />
+
+                <TextView
+                    android:layout_margin="0.5dp"
+                    android:background="#FFF"
+                    android:gravity="end"
+                    android:padding="5dp"
+                    android:text="XXXXXXXX" />
+            </TableRow>
+
+            <TableRow
+                android:background="#000000"
+                android:paddingBottom="1dp"
+                android:paddingRight="1dp">
+
+                <TextView
+                    android:layout_marginStart="1dp"
+                    android:background="#FFF"
+                    android:padding="5dp"
+                    android:text="Ti" />
+
+                <TextView
+                    android:layout_marginStart="1dp"
+                    android:background="#FFF"
+                    android:padding="5dp"
+                    android:text="320 = 20/vt" />
+
+                <TextView
+                    android:layout_marginStart="1dp"
+                    android:background="#FFF"
+                    android:gravity="end"
+                    android:padding="5dp"
+                    android:text="XXXXXXXX" />
+            </TableRow>
+
+            <TableRow
+                android:background="#000000"
+                android:paddingBottom="1dp"
+                android:paddingRight="1dp">
+
+                <TextView
+                    android:layout_marginStart="1dp"
+                    android:background="#FFF"
+                    android:padding="5dp"
+                    android:text="Ke" />
+
+                <TextView
+                    android:layout_marginStart="1dp"
+                    android:background="#FFF"
+                    android:padding="5dp"
+                    android:text="XX = XX/vt" />
+
+                <TextView
+                    android:layout_marginStart="1dp"
+                    android:background="#FFF"
+                    android:gravity="end"
+                    android:padding="5dp"
+                    android:text="XXXXXXXX" />
+            </TableRow>
+
+            <TableRow
+                android:background="#000000"
+                android:paddingBottom="1dp"
+                android:paddingRight="1dp">
+
+                <TextView
+                    android:layout_marginStart="1dp"
+                    android:background="#FFF"
+                    android:padding="5dp"
+                    android:text="To" />
+
+                <TextView
+                    android:layout_marginStart="1dp"
+                    android:background="#FFF"
+                    android:padding="5dp"
+                    android:text="XX = XX/vt" />
+
+                <TextView
+                    android:layout_marginStart="1dp"
+                    android:background="#FFF"
+                    android:gravity="end"
+                    android:padding="5dp"
+                    android:text="XXXXXXXX" />
+            </TableRow>
+
+            <TableRow
+                android:background="#000000"
+                android:paddingBottom="1dp"
+                android:paddingRight="1dp">
+
+                <TextView
+                    android:layout_marginStart="1dp"
+                    android:background="#FFF"
+                    android:padding="5dp"
+                    android:text="Pe" />
+
+                <TextView
+                    android:layout_marginStart="1dp"
+                    android:background="#FFF"
+                    android:padding="5dp"
+                    android:text="XX = XX/vt" />
+
+                <TextView
+                    android:layout_marginStart="1dp"
+                    android:background="#FFF"
+                    android:gravity="end"
+                    android:padding="5dp"
+                    android:text="XXXXXXXX" />
+            </TableRow>
+
+            <TableRow
+                android:background="#000000"
+                android:paddingBottom="1dp"
+                android:paddingRight="1dp">
+
+                <TextView
+                    android:layout_marginStart="1dp"
+                    android:background="#FFF"
+                    android:padding="5dp"
+                    android:text="Arkipäivien keskiarvo" />
+
+                <TextView
+                    android:layout_marginStart="1dp"
+                    android:background="#FFF"
+                    android:padding="5dp"
+                    android:text="XX = XX/vt" />
+
+                <TextView
+                    android:layout_marginStart="1dp"
+                    android:background="#FFF"
+                    android:gravity="end"
+                    android:padding="5dp"
+                    android:text="XXXXXXXX" />
+            </TableRow>
+        </TableLayout>
+
+        <view
+            class="android.support.v4.widget.Space"
+            id="@+id/view3"
+            layout_width="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fab_margin" />
 
         <TextView
-            android:layout_marginStart="1dp"
-            android:background="#FFF"
-            android:padding="5dp"
-            android:text="Maanantai" />
+            android:id="@+id/summary_title3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Syötä tavoite näytön avaamiskerroille arkisin:"
+            android:textAppearance="@android:style/TextAppearance.Material.Subhead" />
 
-        <TextView
-            android:layout_marginStart="1dp"
-            android:background="#FFF"
-            android:padding="5dp"
-            android:text="160 = 10/vt" />
+    </LinearLayout>
 
-        <TextView
-            android:layout_marginStart="1dp"
-            android:background="#FFF"
-            android:gravity="end"
-            android:padding="5dp"
-            android:text="XXXXXXXX" />
-    </TableRow>
-
-    <TableRow
-        android:background="#000000"
-        android:paddingBottom="1dp"
-        android:paddingRight="1dp">
-
-        <TextView
-            android:layout_marginStart="1dp"
-            android:background="#FFF"
-            android:padding="5dp"
-            android:text="Tiistai" />
-
-        <TextView
-            android:layout_marginStart="1dp"
-            android:background="#FFF"
-            android:padding="5dp"
-            android:text="320 = 20/vt" />
-
-        <TextView
-            android:layout_marginStart="1dp"
-            android:background="#FFF"
-            android:gravity="end"
-            android:padding="5dp"
-            android:text="XXXXXXXX" />
-    </TableRow>
-
-    <TableRow
-        android:background="#000000"
-        android:paddingBottom="1dp"
-        android:paddingRight="1dp">
-
-        <TextView
-            android:layout_marginStart="1dp"
-            android:background="#FFF"
-            android:padding="5dp"
-            android:text="Keskiviikko" />
-
-        <TextView
-            android:layout_marginStart="1dp"
-            android:background="#FFF"
-            android:padding="5dp"
-            android:text="XX = XX/vt" />
-
-        <TextView
-            android:layout_marginStart="1dp"
-            android:background="#FFF"
-            android:gravity="end"
-            android:padding="5dp"
-            android:text="XXXXXXXX" />
-    </TableRow>
-
-    <TableRow
-        android:background="#000000"
-        android:paddingBottom="1dp"
-        android:paddingRight="1dp">
-
-        <TextView
-            android:layout_marginStart="1dp"
-            android:background="#FFF"
-            android:padding="5dp"
-            android:text="Torstai" />
-
-        <TextView
-            android:layout_marginStart="1dp"
-            android:background="#FFF"
-            android:padding="5dp"
-            android:text="XX = XX/vt" />
-
-        <TextView
-            android:layout_marginStart="1dp"
-            android:background="#FFF"
-            android:gravity="end"
-            android:padding="5dp"
-            android:text="XXXXXXXX" />
-    </TableRow>
-
-    <TableRow
-        android:background="#000000"
-        android:paddingBottom="1dp"
-        android:paddingRight="1dp">
-
-        <TextView
-            android:layout_marginStart="1dp"
-            android:background="#FFF"
-            android:padding="5dp"
-            android:text="Perjantai" />
-
-        <TextView
-            android:layout_marginStart="1dp"
-            android:background="#FFF"
-            android:padding="5dp"
-            android:text="XX = XX/vt" />
-
-        <TextView
-            android:layout_marginStart="1dp"
-            android:background="#FFF"
-            android:gravity="end"
-            android:padding="5dp"
-            android:text="XXXXXXXX" />
-    </TableRow>
-
-    <TableRow
-        android:background="#000000"
-        android:paddingBottom="1dp"
-        android:paddingRight="1dp">
-
-        <TextView
-            android:layout_marginStart="1dp"
-            android:background="#FFF"
-            android:padding="5dp"
-            android:text="Arkipäivien ka" />
-
-        <TextView
-            android:layout_marginStart="1dp"
-            android:background="#FFF"
-            android:padding="5dp"
-            android:text="XX = XX/vt" />
-
-        <TextView
-            android:layout_marginStart="1dp"
-            android:background="#FFF"
-            android:gravity="end"
-            android:padding="5dp"
-            android:text="XXXXXXXX" />
-    </TableRow>
-</TableLayout>
+</ScrollView>
