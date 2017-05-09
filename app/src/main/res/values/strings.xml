@@ -7,7 +7,7 @@
     <string name="action_settings">Asetukset</string>
     <string name="description">Sovellus älypuhelinriippuvaisille</string>
     <string name="about_app">Tietoja sovelluksesta</string>
-    <string name="about_app_message">© 2017 Ylhävuori &amp; Pitkänen</string>
+    <string name="about_app_message">© 2017 Arttu Ylhävuori &amp; Elias Pitkänen \nAndroid-demosovellus Tampereen yliopiston "Tietokoneavusteinen opetus" -kurssille</string>
     <string name="fact_title">Faktaa</string>
     <string name="now_text">Nyt</string>
 

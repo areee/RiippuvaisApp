@@ -2,6 +2,7 @@ package fi.uta.riippuvaisapp;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -82,7 +83,15 @@ public class MainActivity extends AppCompatActivity
             new AlertDialog.Builder(this)
                     .setTitle(R.string.app_name)
                     .setMessage(R.string.about_app_message)
-                    .setIcon(R.drawable.information)
+                    .setIcon(R.mipmap.ic_launcher_phone_icon)
+                    .setNegativeButton("Sovelluksen lähdekoodi", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intent = new Intent(Intent.ACTION_VIEW);
+                            intent.setData(Uri.parse("https://github.com/areee/RiippuvaisApp"));
+                            startActivity(intent);
+                        }
+                    })
                     .setPositiveButton("Sulje", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
