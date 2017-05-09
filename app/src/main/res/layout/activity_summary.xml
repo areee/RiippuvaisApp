@@ -24,7 +24,6 @@
 
         <view
             class="android.support.v4.widget.Space"
-            id="@+id/view1"
             android:layout_width="match_parent"
             android:layout_height="@dimen/fab_margin" />
 
@@ -33,197 +32,178 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Arkisin"
-            android:textAppearance="@android:style/TextAppearance.Material.Subhead" />
+            android:textAppearance="@android:style/TextAppearance.Material.Title" />
 
         <view
             class="android.support.v4.widget.Space"
-            id="@+id/view2"
             android:layout_width="match_parent"
             android:layout_height="@dimen/fab_margin" />
 
         <TableLayout
-            android:id="@+id/summary_table"
+            android:id="@+id/summary_table1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#000000"
-            android:shrinkColumns="*">
+            android:shrinkColumns="1">
 
-            <TableRow
-                android:background="#000000"
-                android:padding="0.5dp">
+
+            <TableRow android:background="#cccc">
 
                 <TextView
-                    android:layout_margin="0.5dp"
-                    android:background="#cccccc"
                     android:gravity="center"
-                    android:text="Päivä " />
+                    android:padding="3dip"
+                    android:text="Päivä" />
 
                 <TextView
-                    android:layout_margin="0.5dp"
-                    android:background="#cccccc"
                     android:gravity="center"
+
                     android:text="Käyttö kokeilujakson aikana" />
 
                 <TextView
-                    android:layout_margin="0.5dp"
-                    android:background="#cccccc"
                     android:gravity="center"
                     android:text="Arvio käyttötarpeesta" />
             </TableRow>
 
-            <TableRow
-                android:background="#000000"
-                android:padding="0.5dp">
+            <View
+                android:layout_height="2dip"
+                android:background="#FF909090" />
+
+            <TableRow>
 
                 <TextView
-                    android:layout_margin="0.5dp"
-                    android:background="#FFF"
-                    android:padding="5dp"
-                    android:text="Maanantai" />
+                    android:gravity="center"
+
+                    android:text="Ma" />
 
                 <TextView
-                    android:layout_margin="0.5dp"
-                    android:background="#FFF"
-                    android:padding="5dp"
-                    android:text="160 = 10/vt" />
+                    android:gravity="center"
+
+                    android:text="XX = XX/vt" />
 
                 <TextView
-                    android:layout_margin="0.5dp"
-                    android:background="#FFF"
-                    android:gravity="end"
-                    android:padding="5dp"
-                    android:text="XXXXXXXX" />
+                    android:id="@+id/table_need_to_use_cell1"
+                    android:gravity="center"
+                    android:text="XX = XX/vt" />
             </TableRow>
 
-            <TableRow
-                android:background="#000000"
-                android:paddingBottom="1dp"
-                android:paddingRight="1dp">
+            <View
+                android:layout_height="2dip"
+                android:background="#FF909090" />
+
+            <TableRow>
 
                 <TextView
-                    android:layout_marginStart="1dp"
-                    android:background="#FFF"
-                    android:padding="5dp"
+                    android:gravity="center"
+
                     android:text="Ti" />
 
                 <TextView
-                    android:layout_marginStart="1dp"
-                    android:background="#FFF"
-                    android:padding="5dp"
-                    android:text="320 = 20/vt" />
+                    android:gravity="center"
+
+                    android:text="XX = XX/vt" />
 
                 <TextView
-                    android:layout_marginStart="1dp"
-                    android:background="#FFF"
-                    android:gravity="end"
-                    android:padding="5dp"
-                    android:text="XXXXXXXX" />
+                    android:id="@+id/table_need_to_use_cell2"
+                    android:gravity="center"
+                    android:text="XX = XX/vt" />
             </TableRow>
 
-            <TableRow
-                android:background="#000000"
-                android:paddingBottom="1dp"
-                android:paddingRight="1dp">
+            <View
+                android:layout_height="2dip"
+                android:background="#FF909090" />
+
+            <TableRow>
 
                 <TextView
-                    android:layout_marginStart="1dp"
-                    android:background="#FFF"
-                    android:padding="5dp"
+                    android:gravity="center"
+
                     android:text="Ke" />
 
                 <TextView
-                    android:layout_marginStart="1dp"
-                    android:background="#FFF"
-                    android:padding="5dp"
+                    android:gravity="center"
+
                     android:text="XX = XX/vt" />
 
                 <TextView
-                    android:layout_marginStart="1dp"
-                    android:background="#FFF"
-                    android:gravity="end"
-                    android:padding="5dp"
-                    android:text="XXXXXXXX" />
+                    android:id="@+id/table_need_to_use_cell3"
+                    android:gravity="center"
+                    android:text="XX = XX/vt" />
             </TableRow>
 
-            <TableRow
-                android:background="#000000"
-                android:paddingBottom="1dp"
-                android:paddingRight="1dp">
+            <View
+                android:layout_height="2dip"
+                android:background="#FF909090" />
+
+            <TableRow>
 
                 <TextView
-                    android:layout_marginStart="1dp"
-                    android:background="#FFF"
-                    android:padding="5dp"
+                    android:gravity="center"
+
                     android:text="To" />
 
                 <TextView
-                    android:layout_marginStart="1dp"
-                    android:background="#FFF"
-                    android:padding="5dp"
+                    android:gravity="center"
+
                     android:text="XX = XX/vt" />
 
                 <TextView
-                    android:layout_marginStart="1dp"
-                    android:background="#FFF"
-                    android:gravity="end"
-                    android:padding="5dp"
-                    android:text="XXXXXXXX" />
+                    android:id="@+id/table_need_to_use_cell4"
+                    android:gravity="center"
+                    android:text="XX = XX/vt" />
             </TableRow>
 
-            <TableRow
-                android:background="#000000"
-                android:paddingBottom="1dp"
-                android:paddingRight="1dp">
+            <View
+                android:layout_height="2dip"
+                android:background="#FF909090" />
+
+            <TableRow>
 
                 <TextView
-                    android:layout_marginStart="1dp"
-                    android:background="#FFF"
-                    android:padding="5dp"
+                    android:gravity="center"
+
                     android:text="Pe" />
 
                 <TextView
-                    android:layout_marginStart="1dp"
-                    android:background="#FFF"
-                    android:padding="5dp"
+                    android:gravity="center"
+
                     android:text="XX = XX/vt" />
 
                 <TextView
-                    android:layout_marginStart="1dp"
-                    android:background="#FFF"
-                    android:gravity="end"
-                    android:padding="5dp"
-                    android:text="XXXXXXXX" />
+                    android:id="@+id/table_need_to_use_cell5"
+                    android:gravity="center"
+                    android:text="XX = XX/vt" />
             </TableRow>
 
-            <TableRow
-                android:background="#000000"
-                android:paddingBottom="1dp"
-                android:paddingRight="1dp">
+            <View
+                android:layout_height="2dip"
+                android:background="#FF909090" />
+
+            <TableRow>
 
                 <TextView
-                    android:layout_marginStart="1dp"
-                    android:background="#FFF"
-                    android:padding="5dp"
-                    android:text="Arkipäivien keskiarvo" />
+                    android:gravity="center"
+
+                    android:text="Arkipäivien ka" />
 
                 <TextView
-                    android:layout_marginStart="1dp"
-                    android:background="#FFF"
-                    android:padding="5dp"
+                    android:gravity="center"
+
                     android:text="XX = XX/vt" />
 
                 <TextView
-                    android:layout_marginStart="1dp"
-                    android:background="#FFF"
-                    android:gravity="end"
-                    android:padding="5dp"
-                    android:text="XXXXXXXX" />
+                    android:id="@+id/table_need_to_use_cell6"
+                    android:gravity="center"
+                    android:text="XX = XX/vt" />
             </TableRow>
+
+            <View
+                android:layout_height="2dip"
+                android:background="#FF909090" />
+
+
         </TableLayout>
 
         <view
             class="android.support.v4.widget.Space"
-            id="@+id/view3"
             layout_width="match_parent"
             android:layout_width="match_parent"
             android:layout_height="@dimen/fab_margin" />
@@ -234,6 +214,153 @@
             android:layout_height="wrap_content"
             android:text="Syötä tavoite näytön avaamiskerroille arkisin:"
             android:textAppearance="@android:style/TextAppearance.Material.Subhead" />
+
+        <EditText
+            android:id="@+id/summary_edit_text1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ems="3"
+            android:inputType="number" />
+
+        <view
+            class="android.support.v4.widget.Space"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fab_margin" />
+
+        <TextView
+            android:id="@+id/summary_title4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Viikonloppuisin"
+            android:textAppearance="@android:style/TextAppearance.Material.Title" />
+
+        <view
+            class="android.support.v4.widget.Space"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fab_margin" />
+
+        <TableLayout
+            android:id="@+id/summary_table2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shrinkColumns="1">
+
+
+            <TableRow android:background="#cccc">
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="3dip"
+                    android:text="Päivä" />
+
+                <TextView
+                    android:gravity="center"
+
+                    android:text="Käyttö kokeilujakson aikana" />
+
+                <TextView
+                    android:gravity="center"
+                    android:text="Arvio käyttötarpeesta" />
+            </TableRow>
+
+            <View
+                android:layout_height="2dip"
+                android:background="#FF909090" />
+
+            <TableRow>
+
+                <TextView
+                    android:gravity="center"
+
+                    android:text="La" />
+
+                <TextView
+                    android:gravity="center"
+
+                    android:text="XX = XX/vt" />
+
+                <TextView
+                    android:id="@+id/table_need_to_use_cell7"
+                    android:gravity="center"
+                    android:text="XX = XX/vt" />
+            </TableRow>
+
+            <View
+                android:layout_height="2dip"
+                android:background="#FF909090" />
+
+            <TableRow>
+
+                <TextView
+                    android:gravity="center"
+
+                    android:text="Su" />
+
+                <TextView
+                    android:gravity="center"
+
+                    android:text="XX = XX/vt" />
+
+                <TextView
+                    android:id="@+id/table_need_to_use_cell8"
+                    android:gravity="center"
+                    android:text="XX = XX/vt" />
+            </TableRow>
+
+            <View
+                android:layout_height="2dip"
+                android:background="#FF909090" />
+
+            <TableRow>
+
+                <TextView
+                    android:gravity="center"
+
+                    android:text="Viikonlopun ka" />
+
+                <TextView
+                    android:gravity="center"
+
+                    android:text="XX = XX/vt" />
+
+                <TextView
+                    android:id="@+id/table_need_to_use_cell9"
+                    android:gravity="center"
+                    android:text="XX = XX/vt" />
+            </TableRow>
+
+            <View
+                android:layout_height="2dip"
+                android:background="#FF909090" />
+        </TableLayout>
+
+        <view
+            class="android.support.v4.widget.Space"
+            id="@+id/view3"
+            layout_width="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fab_margin" />
+
+        <TextView
+            android:id="@+id/summary_title5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Syötä tavoite näytön avaamiskerroille viikonloppuisin:"
+            android:textAppearance="@android:style/TextAppearance.Material.Subhead" />
+
+        <EditText
+            android:id="@+id/summary_edit_text2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ems="3"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/summary_ready_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="closeSummary"
+            android:text="Valmis" />
 
     </LinearLayout>
 
