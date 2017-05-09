@@ -1,4 +1,4 @@
-# RiippuvaisApp
+# Näyttölaskuri (työnimi: RiippuvaisApp)
 
 
 © 2017 Arttu Ylhävuori & Elias Pitkänen
