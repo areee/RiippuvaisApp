@@ -6,7 +6,7 @@
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@mipmap/ic_launcher_phone_icon" />
+            android:src="@drawable/puhelinikoni_web" />
     </item>
 
 </layer-list>
