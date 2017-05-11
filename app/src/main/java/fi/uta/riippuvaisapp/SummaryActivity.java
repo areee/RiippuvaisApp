@@ -26,6 +26,8 @@ public class SummaryActivity extends AppCompatActivity {
     EditText editTextNumber1;
     EditText editTextNumber2;
 
+    EditText editTextNumber3;
+
     String FILENAME1 = "set_goal";
     String FILENAME2 = "summary_values";
 
@@ -46,6 +48,8 @@ public class SummaryActivity extends AppCompatActivity {
 
         editTextNumber1 = (EditText) findViewById(R.id.summary_edit_text1);
         editTextNumber2 = (EditText) findViewById(R.id.summary_edit_text2);
+
+        editTextNumber3 = (EditText) findViewById(R.id.summary_edit_text3);
 
         int ch;
         StringBuffer fileContent = new StringBuffer("");
@@ -111,26 +115,37 @@ public class SummaryActivity extends AppCompatActivity {
         String s1 = editTextNumber1.getText().toString();
         String s2 = editTextNumber2.getText().toString();
 
-        String s = "";
+        String s3 = editTextNumber3.getText().toString();
 
-        s = s.concat(s1 + "\n");
-        s = s.concat(s2 + "\n");
+        int i = Integer.parseInt(s3);
 
-        System.out.println(s);
+        if (i > 2 && i < 9) {
+            String s = "";
 
-        try {
-            FileOutputStream outputStream = openFileOutput(FILENAME2, Context.MODE_PRIVATE);
-            outputStream.write(s.getBytes());
-            outputStream.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+            s = s.concat(s1 + "\n");
+            s = s.concat(s2 + "\n");
+            s = s.concat(s3 + "\n");
+
+            System.out.println(s);
+
+            try {
+                FileOutputStream outputStream = openFileOutput(FILENAME2, Context.MODE_PRIVATE);
+                outputStream.write(s.getBytes());
+                outputStream.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            System.out.println("Tallennettu tiedostoon " + FILENAME2);
+
+            Toast toast = Toast.makeText(getApplicationContext(), "Tavoite tallennettu!", Toast.LENGTH_LONG);
+            toast.show();
+
+            finish();
+        } else {
+            Toast.makeText(getApplicationContext(), "Tavoitetta ei ollut asetettu 3-8 viikoksi. Yritä uudelleen!", Toast.LENGTH_LONG).show();
         }
 
-        System.out.println("Tallennettu tiedostoon " + FILENAME2);
 
-        Toast toast = Toast.makeText(getApplicationContext(), "Tavoite tallennettu!", Toast.LENGTH_LONG);
-        toast.show();
-
-        finish();
     }
 }
