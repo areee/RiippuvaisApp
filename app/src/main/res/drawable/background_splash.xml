@@ -6,7 +6,7 @@
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@drawable/puhelinikoni_web" />
+            android:src="@drawable/puhelinikoni_144dp" />
     </item>
 
 </layer-list>
