@@ -2,6 +2,7 @@ package fi.uta.riippuvaisapp;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -17,9 +18,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    public static final String PREFS_NAME = "FileForSharedPreferences";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +37,7 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Tästä kalenteriin", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Tästä pääsee kalenteriin (ei toteutettu demo-versioon!)", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -147,11 +150,19 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void setGoalClicked(View v) {
-//        Intent intent = new Intent(getApplicationContext(), SetGoalActivity.class);
-//        startActivity(intent);
+        SharedPreferences exerciseStatus = getSharedPreferences(PREFS_NAME, 0);
+        boolean exercise1Done = exerciseStatus.getBoolean("exercise1Done", false);
+        boolean exercise2Done = exerciseStatus.getBoolean("exercise2Done", false);
+        boolean exercise3Done = exerciseStatus.getBoolean("exercise3Done", false);
+        boolean exercise4Done = exerciseStatus.getBoolean("exercise4Done", false);
 
-        Intent intent = new Intent(getApplicationContext(), RecallActivity.class);
-        startActivity(intent);
+        if (exercise1Done && exercise2Done && exercise3Done) {
+
+            Intent intent = new Intent(getApplicationContext(), RecallActivity.class);
+            startActivity(intent);
+        } else {
+            Toast.makeText(getApplicationContext(), "Tee tehtävät 1-3 ennen kuin asetat tavoitteen!", Toast.LENGTH_LONG).show();
+        }
     }
 
     public void factsCliked(View view) {
