@@ -54,7 +54,7 @@ public class ReadDataActivity extends AppCompatActivity {
             }
             fis.close();
         } catch (Exception e) {
-            Toast.makeText(getApplicationContext(), "Tähän osioon ei ole vielä tallennettu arvoja", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Tähän osioon ei ole vielä tallennettu arvoja", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
 
