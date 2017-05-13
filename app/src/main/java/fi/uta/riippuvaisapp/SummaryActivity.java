@@ -117,33 +117,38 @@ public class SummaryActivity extends AppCompatActivity {
 
         String s3 = editTextNumber3.getText().toString();
 
-        int i = Integer.parseInt(s3);
-
-        if (i > 2 && i < 9) {
-            String s = "";
-
-            s = s.concat(s1 + "\n");
-            s = s.concat(s2 + "\n");
-            s = s.concat(s3 + "\n");
-
-            System.out.println(s);
-
-            try {
-                FileOutputStream outputStream = openFileOutput(FILENAME2, Context.MODE_PRIVATE);
-                outputStream.write(s.getBytes());
-                outputStream.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            System.out.println("Tallennettu tiedostoon " + FILENAME2);
-
-            Toast toast = Toast.makeText(getApplicationContext(), "Tavoite tallennettu!", Toast.LENGTH_LONG);
-            toast.show();
-
-            finish();
+        if (s3.equals("")) {
+            Toast.makeText(getApplicationContext(), "Aseta viikkojen määrä jatkaaksesi!", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(getApplicationContext(), "Tavoitetta ei ollut asetettu 3-8 viikoksi. Yritä uudelleen!", Toast.LENGTH_LONG).show();
+
+            int i = Integer.parseInt(s3);
+
+            if (i > 2 && i < 9) {
+                String s = "";
+
+                s = s.concat(s1 + "\n");
+                s = s.concat(s2 + "\n");
+                s = s.concat(s3 + "\n");
+
+                System.out.println(s);
+
+                try {
+                    FileOutputStream outputStream = openFileOutput(FILENAME2, Context.MODE_PRIVATE);
+                    outputStream.write(s.getBytes());
+                    outputStream.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                System.out.println("Tallennettu tiedostoon " + FILENAME2);
+
+                Toast toast = Toast.makeText(getApplicationContext(), "Tavoite tallennettu!", Toast.LENGTH_LONG);
+                toast.show();
+
+                finish();
+            } else {
+                Toast.makeText(getApplicationContext(), "Tavoitetta ei ollut asetettu 3-8 viikoksi. Yritä uudelleen!", Toast.LENGTH_LONG).show();
+            }
         }
 
 
