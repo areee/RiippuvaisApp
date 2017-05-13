@@ -3,6 +3,7 @@ package fi.uta.riippuvaisapp;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,8 +14,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.util.Arrays;
 
 public class SetGoalActivity extends AppCompatActivity {
     TextView dayTitle;
@@ -39,6 +40,7 @@ public class SetGoalActivity extends AppCompatActivity {
     int helpValue;
 
     String FILENAME = "set_goal";
+    public static final String PREFS_NAME = "FileForSharedPreferences";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +75,7 @@ public class SetGoalActivity extends AppCompatActivity {
         // 7 times in timeList * 5 goals to set * 2 day categories = 70 values
         values = 70;
         valueList = new String[values];
+        Arrays.fill(valueList, "0");
 
         helpValue = 0;
 
@@ -88,7 +91,13 @@ public class SetGoalActivity extends AppCompatActivity {
     public void next(View v) {
         readAndSaveGoalValues();
 
-
+//        if (allGoalsAreEmpty()) {
+//            goal1.setText(0);
+//            goal2.setText(0);
+//            goal3.setText(0);
+//            goal4.setText(0);
+//            goal5.setText(0);
+//        } else {
         // When the values of goal text fields are in safe, the fields are cleared:
         goal1.setText(valueList[helpValue]);
         goal2.setText(valueList[helpValue + 1]);
@@ -123,6 +132,11 @@ public class SetGoalActivity extends AppCompatActivity {
         timeTitle.setText(timeList[timeNumber]);
 
         setFocusAndOpenSoftKeyboard();
+//        }
+    }
+
+    private boolean allGoalsAreEmpty() {
+        return goal1.getText().equals("") && goal2.getText().equals("") && goal3.getText().equals("") && goal4.getText().equals("") && goal5.getText().equals("");
     }
 
     private void setFocusAndOpenSoftKeyboard() {
@@ -253,6 +267,12 @@ public class SetGoalActivity extends AppCompatActivity {
 
         Toast toast = Toast.makeText(getApplicationContext(), "Tavoite tallennettu!", Toast.LENGTH_LONG);
         toast.show();
+
+        // Saving to SharedPreferences that setting goal is done:
+        SharedPreferences exerciseStatus = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences.Editor edit = exerciseStatus.edit();
+        edit.putBoolean("setGoalDone", true);
+        edit.commit();
 
         finish();
 

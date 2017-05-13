@@ -135,8 +135,14 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(getApplicationContext(), ReadDataActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_go_to_summary) {
-            Intent intent = new Intent(getApplicationContext(), SummaryActivity.class);
-            startActivity(intent);
+            SharedPreferences exerciseStatus = getSharedPreferences(PREFS_NAME, 0);
+            boolean setGoalDone = exerciseStatus.getBoolean("setGoalDone", false);
+
+            if (setGoalDone) {
+                startActivity(new Intent(getApplicationContext(), SummaryActivity.class));
+            } else {
+                Toast.makeText(getApplicationContext(), "Aseta tavoite ennen kuin pääset tarkastelemaan suoraan yhteenvetoa!", Toast.LENGTH_LONG).show();
+            }
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -154,7 +160,7 @@ public class MainActivity extends AppCompatActivity
         boolean exercise1Done = exerciseStatus.getBoolean("exercise1Done", false);
         boolean exercise2Done = exerciseStatus.getBoolean("exercise2Done", false);
         boolean exercise3Done = exerciseStatus.getBoolean("exercise3Done", false);
-        boolean exercise4Done = exerciseStatus.getBoolean("exercise4Done", false);
+        boolean exercise4Done = exerciseStatus.getBoolean("exercise4Done", false); // not necessary in the demo version
 
         if (exercise1Done && exercise2Done && exercise3Done) {
 
