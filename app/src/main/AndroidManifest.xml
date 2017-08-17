@@ -28,39 +28,90 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".FactActivity"
-            android:label="@string/fact_title" />
+            android:label="@string/fact_title"
+            android:parentActivityName=".MainActivity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity
             android:name=".ExerciseActivity"
-            android:label="@string/exercise_title" />
+            android:label="@string/exercise_title"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity
             android:name=".Exercise1Activity"
-            android:label="@string/exercise1_text" />
+            android:label="@string/exercise1_text"
+            android:parentActivityName=".ExerciseActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ExerciseActivity" />
+        </activity>
         <activity
             android:name=".Exercise2Activity"
-            android:label="@string/exercise2_text" />
+            android:label="@string/exercise2_text"
+            android:parentActivityName=".ExerciseActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ExerciseActivity" />
+        </activity>
         <activity
             android:name=".Exercise3Activity"
-            android:label="@string/exercise3_text" />
+            android:label="@string/exercise3_text"
+            android:parentActivityName=".ExerciseActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ExerciseActivity" />
+        </activity>
+        <activity
+            android:name=".SetGoalActivity"
+            android:label="@string/title_activity_setting_goal"
+            android:parentActivityName=".RecallActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".RecallActivity" />
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/settings_title"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".ReadDataActivity"
+            android:label="Lue tallennettua dataa"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".RecallActivity"
+            android:label="Palauta mieleesi"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".SummaryActivity"
+            android:label="Yhteenveto"
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity
             android:name=".FirstStartActivity"
             android:label="@string/title_activity_first_start"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".SetGoalActivity"
-            android:label="@string/title_activity_setting_goal" />
-        <activity
-            android:name=".SettingsActivity"
-            android:label="@string/settings_title" />
-        <activity
-            android:name=".ReadDataActivity"
-            android:label="Lue tallennettua dataa" />
-        <activity
-            android:name=".RecallActivity"
-            android:label="Palauta mieleesi" />
-        <activity
-            android:name=".SummaryActivity"
-            android:label="Yhteenveto"
-            android:windowSoftInputMode="stateHidden" />
     </application>
 
 </manifest>
